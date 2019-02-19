@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>开篇 &mdash; 面向数据科学的数据分析教程  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
+        <script type="text/javascript" src="../_static/google_analytics.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Python" href="Python.html" />
+    <link rel="prev" title="Pythond的科学计算工具" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 面向数据科学的数据分析教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pythond的科学计算工具</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">开篇</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#numpy">NumPy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matplotlib">Matplotlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seaborn">Seaborn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scikit-learn">Scikit-learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">其他</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scipy">SciPy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plotly">Plotly</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">参考文章</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter notebook.html">Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Numpy.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Seaborn.html">Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scikit-learn.html">Scikit-learn</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear-Regression/index.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Logistic-Regression/index.html">逻辑回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Perceptron/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">面向数据科学的数据分析教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Pythond的科学计算工具</a> &raquo;</li>
+        
+      <li>开篇</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Python/开篇.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="id1">
+<h1>开篇<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Python 在解决数据科学任务和挑战方面继续处于领先地位，本章主要介绍 Python 中几个最基础、也是最重要科学技计算包。</p>
+<div class="section" id="numpy">
+<h2>NumPy<a class="headerlink" href="#numpy" title="永久链接至标题">¶</a></h2>
+<p>NumPy 是科学应用程序库的主要软件包之一，用于处理大型多维数组和矩阵，它大量的高级数学函数集合和实现方法使得这些对象执行操作成为可能。</p>
+<p>官网：<a class="reference external" href="http://www.numpy.org/">http://www.numpy.org/</a></p>
+</div>
+<div class="section" id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="永久链接至标题">¶</a></h2>
+<p>Pandas 是一个 Python 库，提供高级的数据结构和各种各样的分析工具。这个软件包的主要特点是能够将相当复杂的数据操作转换为一两个命令。Pandas包含许多用于分组、过滤和组合数据的内置方法，以及时间序列功能。</p>
+<p>官网：<a class="reference external" href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></p>
+</div>
+<div class="section" id="matplotlib">
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="永久链接至标题">¶</a></h2>
+<p>Matplotlib 是一个用于创建二维图和图形的底层库。藉由它的帮助，你可以构建各种不同的图标，从直方图和散点图到费笛卡尔坐标图。</p>
+<p>Matplotlib 就是 MATLAB+Plot+Library ，即模仿 MATLAB 的绘图库，其绘图风格与 MATLAB 类似。</p>
+<p>官网：<a class="reference external" href="https://matplotlib.org/index.html">https://matplotlib.org/index.html</a></p>
+</div>
+<div class="section" id="seaborn">
+<h2>Seaborn<a class="headerlink" href="#seaborn" title="永久链接至标题">¶</a></h2>
+<p>Seaborn 本质上是一个基于 matplotlib 库的高级 API。它包含更适合处理图表的默认设置。此外，还有丰富的可视化库，包括一些复杂类型，如时间序列、联合分布图</p>
+<p>官网：<a class="reference external" href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a></p>
+</div>
+<div class="section" id="scikit-learn">
+<h2>Scikit-learn<a class="headerlink" href="#scikit-learn" title="永久链接至标题">¶</a></h2>
+<p>Scikit-learn 是 Python 中简单高效的数据挖掘和数据分析工具，建立在 NumPy，SciPy 和 matplotlib 的基础上，为许多标准的机器学习和数据挖掘任务提供算法，如聚类、回归、分类、降维和模型选择。</p>
+<p>官网：<a class="reference external" href="http://scikit-learn.org/stable/">http://scikit-learn.org/stable/</a></p>
+<p>中文文档：<a class="reference external" href="http://sklearn.apachecn.org/cn/0.19.0/">http://sklearn.apachecn.org/cn/0.19.0/</a></p>
+</div>
+<div class="section" id="id2">
+<h2>其他<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="scipy">
+<h3>SciPy<a class="headerlink" href="#scipy" title="永久链接至标题">¶</a></h3>
+<p>SciPy 基于 NumPy，其功能也因此得到了扩展。SciPy 主数据结构又是一个多维数组，由 Numpy 实现,包含了帮助解决线性代数、概率论、积分计算和许多其他任务的工具。</p>
+<p>官网：<a class="reference external" href="https://scipy.org/scipylib/">https://scipy.org/scipylib/</a></p>
+</div>
+<div class="section" id="plotly">
+<h3>Plotly<a class="headerlink" href="#plotly" title="永久链接至标题">¶</a></h3>
+<p>Plotly 是 一个动态绘图模块，它可以让你轻松构建复杂的图形。该软件包适用于交互式 Web 应用程，可实现轮廓图、三元图和三维图等视觉效果。</p>
+<p>官网：<a class="reference external" href="https://plot.ly/python/">https://plot.ly/python/</a></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>参考文章<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://mp.weixin.qq.com/s/k57gz_FkAk_y2vV4x24hCw">2018：数据科学20个最好的Python库</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Python.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Pythond的科学计算工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2019
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

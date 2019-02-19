@@ -1,0 +1,1384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Numpy &mdash; 面向数据科学的数据分析教程  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
+        <script type="text/javascript" src="../_static/google_analytics.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Pandas" href="Pandas.html" />
+    <link rel="prev" title="Jupyter Notebook" href="Jupyter notebook.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 面向数据科学的数据分析教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pythond的科学计算工具</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="开篇.html">开篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter notebook.html">Jupyter Notebook</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Numpy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#版本">版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#别名">别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#数组">数组</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#属性">属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#利用列表(list)生成数组">利用列表(list)生成数组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#利用Numpy内置方法创建数值">利用<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>内置方法创建数值</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#数组操作">数组操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#基本运算">基本运算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#索引与切片">索引与切片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#排序">排序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#变形">变形</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#转置">转置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#拼接">拼接</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#拆分">拆分</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#通用函数">通用函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#广播">广播</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#参考资料">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Seaborn.html">Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scikit-learn.html">Scikit-learn</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear-Regression/index.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Logistic-Regression/index.html">逻辑回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Perceptron/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">面向数据科学的数据分析教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Pythond的科学计算工具</a> &raquo;</li>
+        
+      <li>Numpy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Python/Numpy.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 5ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Numpy">
+<h1>Numpy<a class="headerlink" href="#Numpy" title="永久链接至标题">¶</a></h1>
+<p>Numpy 是 Python 中用于科学计算的基本包。 它是一个 Python 库，提供多维数组对象、各种派生对象(如屏蔽数组和矩阵) ，以及用于数组快速操作的各种例程，包括数学、逻辑、形状操作、排序、选择、 i/o、离散傅立叶变换、基本线性代数、基本统计操作、随机模拟等等。</p>
+<div class="section" id="版本">
+<h2>版本<a class="headerlink" href="#版本" title="永久链接至标题">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;1.15.4&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="别名">
+<h2>别名<a class="headerlink" href="#别名" title="永久链接至标题">¶</a></h2>
+<p>遵循传统，使用<code class="docutils literal notranslate"><span class="pre">np</span></code>作为别名导入 NumPy ：</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="数组">
+<h2>数组<a class="headerlink" href="#数组" title="永久链接至标题">¶</a></h2>
+<p>Numpy 包的核心是<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>对象，封装了同类数据类型的 n 维数组，通常用别名<code class="docutils literal notranslate"><span class="pre">array</span></code>来表示。</p>
+<div class="section" id="属性">
+<h3>属性<a class="headerlink" href="#属性" title="永久链接至标题">¶</a></h3>
+<p>每个<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>数组都拥有如下属性：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">nidm</span></code>：数组维度</li>
+<li><code class="docutils literal notranslate"><span class="pre">shape</span></code>：维度大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">size</span></code>：数组大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">dtype</span></code>：数据类型</li>
+<li><code class="docutils literal notranslate"><span class="pre">itemsize</span></code>：元素字节大小, 以<code class="docutils literal notranslate"><span class="pre">bytes</span></code>为单位</li>
+<li><code class="docutils literal notranslate"><span class="pre">nbytes</span></code>：数组字节大小, 以<code class="docutils literal notranslate"><span class="pre">bytes</span></code>为单位</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3×3、由[0,10)均匀分布随机整数组成的数值</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">x.ndim:&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x.shape:&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x.size:&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x.dtype:&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x.itemsize:&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">itemsize</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x.nbytes:&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[3 4 9]
+ [0 0 6]
+ [4 4 3]]
+
+x.ndim: 2
+x.shape: (3, 3)
+x.size: 9
+x.dtype: int32
+x.itemsize: 4
+x.nbytes: 36
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="利用列表(list)生成数组">
+<h3>利用列表(list)生成数组<a class="headerlink" href="#利用列表(list)生成数组" title="永久链接至标题">¶</a></h3>
+<p>利用<code class="docutils literal notranslate"><span class="pre">nd.array</span></code>从 Pyhon 列表创建数值:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([1, 2, 3, 4])
+</pre></div>
+</div>
+</div>
+<p>不同于 Python 列表， Numpy 要求数组必须包含同一类型的数据。如果类型不匹配，NumPy 将会向上转换（如果可行）。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([1., 2., 3., 4.])
+</pre></div>
+</div>
+</div>
+<p>如果希望明确设置数组的数据类型，可以用<code class="docutils literal notranslate"><span class="pre">dtype</span></code>变量：</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([1., 2., 3., 4.], dtype=float32)
+</pre></div>
+</div>
+</div>
+<p>构建多维数组：</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="利用Numpy内置方法创建数值">
+<h3>利用<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>内置方法创建数值<a class="headerlink" href="#利用Numpy内置方法创建数值" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>:创建全 0 数值</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个长度为5的全0数组</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([0., 0., 0., 0., 0.])
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.ones()</span></code>:创建全 1 数组</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3*3的q全1矩阵</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[1., 1., 1.],
+       [1., 1., 1.],
+       [1., 1., 1.]])
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.eye()</span></code>:创建一个单位矩阵</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3*3的单位矩阵</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.full(shape,</span> <span class="pre">fill_value)</span></code>：创建一个维数为<code class="docutils literal notranslate"><span class="pre">shape</span></code>、值为<code class="docutils literal notranslate"><span class="pre">fill_value</span></code>的数组</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个维数为3*3、值为2.0的浮点数型数组</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">fill_value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[2., 2., 2.],
+       [2., 2., 2.],
+       [2., 2., 2.]])
+</pre></div>
+</div>
+</div>
+<p>序列数组：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>：创建一个从<code class="docutils literal notranslate"><span class="pre">start</span></code>到<code class="docutils literal notranslate"><span class="pre">stop</span></code>,步长为<code class="docutils literal notranslate"><span class="pre">step</span></code>的序列数组。</li>
+<li><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num=50)</span></code>：创建一个从<code class="docutils literal notranslate"><span class="pre">start</span></code>到<code class="docutils literal notranslate"><span class="pre">stop</span></code>,元素个数为<code class="docutils literal notranslate"><span class="pre">num</span></code>的序列数组。</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个从0到10,步长为2的序列数组</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([0, 2, 4, 6, 8])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个从0到10,元素个数为5的序列数组</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([ 0. ,  2.5,  5. ,  7.5, 10. ])
+</pre></div>
+</div>
+</div>
+<p>随机分布数组：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code>：创建一个由 0 ~ 1 均匀分布生成的随机数组成的数组</li>
+<li><code class="docutils literal notranslate"><span class="pre">np.random.normal(loc=0.0,</span> <span class="pre">scale=1.0,</span> <span class="pre">size=None)</span></code>：创建一个由均值为<code class="docutils literal notranslate"><span class="pre">loc</span></code>、方差为<code class="docutils literal notranslate"><span class="pre">scale</span></code>的正态分布生成的随机数组成的数组</li>
+<li><code class="docutils literal notranslate"><span class="pre">np.random.randint(low,</span> <span class="pre">high=None,</span> <span class="pre">size=None)</span></code>：创建一个由<code class="docutils literal notranslate"><span class="pre">low</span></code>~<code class="docutils literal notranslate"><span class="pre">high</span></code>均匀分布生成的随机整数组成的数值</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3×3、由0~1均匀分布随机数组成的数组</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[0.36002842, 0.08519123, 0.4640263 ],
+       [0.54155948, 0.43645734, 0.44322506],
+       [0.30741928, 0.2057965 , 0.21929336]])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3×3、由均值为0、方差为1的正态分布随机数组成的数组</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[-0.35800332, -0.36553495, -0.62851015],
+       [-2.01214244,  0.42221338,  0.25461076],
+       [ 0.64228871,  0.28348644,  0.69593449]])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3×3、由[0,10)均匀分布随机整数组成的数值</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[3, 6, 0],
+       [3, 2, 3],
+       [0, 9, 2]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="数组操作">
+<h2>数组操作<a class="headerlink" href="#数组操作" title="永久链接至标题">¶</a></h2>
+<div class="section" id="基本运算">
+<h3>基本运算<a class="headerlink" href="#基本运算" title="永久链接至标题">¶</a></h3>
+<p>数组上的运算与 Python 类似，支持 Python 原生的算术运算符，标准的加、减、乘、除都可以使用。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x + 5 =&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x * 2 =&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x / 2 =&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x // 2 =&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;-x = &quot;</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x ** 2 = &quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x % 2 = &quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x = [0 1 2 3]
+x + 5 = [5 6 7 8]
+x * 2 = [0 2 4 6]
+x / 2 = [0.  0.5 1.  1.5]
+x // 2 = [0 0 1 1]
+-x =  [ 0 -1 -2 -3]
+x ** 2 =  [0 1 4 9]
+x % 2 =  [0 1 0 1]
+</pre></div></div>
+</div>
+<p>运算符与通用函数的对应关系如下表所示：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="38%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">运算符</th>
+<th class="head">对应的通用函数</th>
+<th class="head">描述</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>np.add</td>
+<td>加法运算</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>np.subtract</td>
+<td>减法运算</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>np.negative</td>
+<td>负数运算</td>
+</tr>
+<tr class="row-odd"><td>*</td>
+<td>np.multipy</td>
+<td>乘法运算</td>
+</tr>
+<tr class="row-even"><td>/</td>
+<td>np.divide</td>
+<td>除法运算</td>
+</tr>
+<tr class="row-odd"><td>//</td>
+<td>np.floor_divide</td>
+<td>取商除法运算</td>
+</tr>
+<tr class="row-even"><td>**</td>
+<td>np.power</td>
+<td>指数运算</td>
+</tr>
+<tr class="row-odd"><td>&amp;</td>
+<td>np.mod</td>
+<td>取模(余数)除法运算</td>
+</tr>
+</tbody>
+</table>
+<p>与许多矩阵语言不同，乘法运算符<code class="docutils literal notranslate"><span class="pre">*</span></code>在 Numpy 数组中按元素操作，矩阵运算可以使用<code class="docutils literal notranslate"><span class="pre">&#64;</span></code>操作符(在 python 3.5中)或<code class="docutils literal notranslate"><span class="pre">dot</span></code>函数执行。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span> <span class="p">)</span>
+<span class="c1"># 元素操作</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;A * B =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="c1"># 矩阵运算</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">A @ B =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span> <span class="err">@</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="c1"># 另一种矩阵运算</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">A.dot(B) =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+A * B =
+ [[2 0]
+ [0 4]]
+
+A @ B =
+ [[5 4]
+ [3 4]]
+
+A.dot(B) =
+ [[5 4]
+ [3 4]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="索引与切片">
+<h3>索引与切片<a class="headerlink" href="#索引与切片" title="永久链接至标题">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3×3、由[0,10)均匀分布随机整数组成的数值</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 索引</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">x[1,1] =&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># 切片</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x[1:,1:] =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[5 0 5]
+ [1 9 6]
+ [1 5 1]]
+
+x[1,1] = 9
+x[1:,1:] =
+ [[9 6]
+ [5 1]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="排序">
+<h3>排序<a class="headerlink" href="#排序" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>np.sort(a, axis=1)：<code class="docutils literal notranslate"><span class="pre">a</span></code>表示要排序的数值，<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>表示按列排序(<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>表示按行排序)</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个4×6、由[0,10)均匀分布随机整数组成的数值</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 按列排序</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">np.sort(x, axis=0) =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># 按列排序</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">np.sort(x, axis=1) =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x =
+ [[7 9 6 2 1 2]
+ [9 3 4 5 8 7]
+ [4 6 8 1 6 7]
+ [5 7 8 6 1 2]]
+
+np.sort(x, axis=0) =
+ [[4 3 4 1 1 2]
+ [5 6 6 2 1 2]
+ [7 7 8 5 6 7]
+ [9 9 8 6 8 7]]
+
+np.sort(x, axis=1) =
+ [[1 2 2 6 7 9]
+ [3 4 5 7 8 9]
+ [1 4 6 6 7 8]
+ [1 2 5 6 7 8]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="变形">
+<h3>变形<a class="headerlink" href="#变形" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>方法</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 创建一个3×3、由[0,10)均匀分布随机整数组成的数值</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">通过变形获得的行向量:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过变形获得的列向量:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x =
+ [[9 3 5]
+ [8 7 7]
+ [2 7 2]]
+
+通过变形获得的行向量:
+ [[9 3 5 8 7 7 2 7 2]]
+通过变形获得的列向量:
+ [[9]
+ [3]
+ [5]
+ [8]
+ [7]
+ [7]
+ [2]
+ [7]
+ [2]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="转置">
+<h3>转置<a class="headerlink" href="#转置" title="永久链接至标题">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">x.T =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x =
+ [[0 4 0]
+ [5 8 6]]
+
+x.T =
+ [[0 5]
+ [4 8]
+ [0 6]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="拼接">
+<h3>拼接<a class="headerlink" href="#拼接" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">np.concatenate((a1,</span> <span class="pre">a2,</span> <span class="pre">...),</span> <span class="pre">axis=0)</span></code>：按垂直(水平<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>)拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">np.vstack((a1,</span> <span class="pre">a2,</span> <span class="pre">...))</span></code>：按垂直方向拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">np.hstack((a1,</span> <span class="pre">a2,</span> <span class="pre">...))</span></code>：按水平方向拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[1, 2, 3, 4],
+       [1, 2, 3, 4]])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 按垂直方向拼接数组x和x</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.concatenate()方法拼接:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.vstack()方法拼接:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+通过np.concatenate()方法拼接:
+ [[1 2 3 4]
+ [1 2 3 4]
+ [1 2 3 4]
+ [1 2 3 4]]
+通过np.vstack()方法拼接:
+ [[1 2 3 4]
+ [1 2 3 4]
+ [1 2 3 4]
+ [1 2 3 4]]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 按水平方向拼接数值x和x</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.concatenate()方法拼接:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.vstack()方法拼接:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+通过np.concatenate()方法拼接:
+ [[1 2 3 4 1 2 3 4]
+ [1 2 3 4 1 2 3 4]]
+通过np.vstack()方法拼接:
+ [[1 2 3 4 1 2 3 4]
+ [1 2 3 4 1 2 3 4]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="拆分">
+<h3>拆分<a class="headerlink" href="#拆分" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">np.split(ary,</span> <span class="pre">indices_or_sections,</span> <span class="pre">axis=0)</span></code>：<code class="docutils literal notranslate"><span class="pre">ary</span></code>为要拆分的数值，<code class="docutils literal notranslate"><span class="pre">indices_or_sections</span></code>为拆分节点序列，<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>表示按竖直方向拆分(<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>表示按竖直方向拆分)</li>
+<li><code class="docutils literal notranslate"><span class="pre">np.hsplit()</span></code>：按水平方向拆分</li>
+<li><code class="docutils literal notranslate"><span class="pre">np.vsplit()</span></code>：按竖直方向拆分</li>
+</ul>
+<p>一维数组：</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">x</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0 1 2 3 4 5 6 7 8]
+[array([0, 1, 2]), array([3, 4, 5]), array([6, 7, 8])]
+[array([0, 1]), array([2, 3, 4]), array([5, 6]), array([7, 8])]
+</pre></div></div>
+</div>
+<p>二维数组：</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 按竖直方向拆分</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.split()方法拆分:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.hsplit()方法拆分:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+通过np.split()方法拆分:
+ [array([[3, 4, 1]]), array([[9, 7, 0]]), array([[0, 0, 8]])]
+通过np.hsplit()方法拆分:
+ [array([[3, 4, 1]]), array([[9, 7, 0]]), array([[0, 0, 8]])]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 按水平方向拆分</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.split()方法拆分:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;通过np.hsplit()方法拆分:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+通过np.split()方法拆分:
+ [array([[3],
+       [9],
+       [0]]), array([[4],
+       [7],
+       [0]]), array([[1],
+       [0],
+       [8]])]
+通过np.hsplit()方法拆分:
+ [array([[3],
+       [9],
+       [0]]), array([[4],
+       [7],
+       [0]]), array([[1],
+       [0],
+       [8]])]
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="通用函数">
+<h2>通用函数<a class="headerlink" href="#通用函数" title="永久链接至标题">¶</a></h2>
+<p>Numpy 提供熟悉的数学函数，例如<code class="docutils literal notranslate"><span class="pre">sin</span></code>，<code class="docutils literal notranslate"><span class="pre">cos</span></code>和<code class="docutils literal notranslate"><span class="pre">exp</span></code>等，在 NumPy 中，这些被称为“通用函数”（<code class="docutils literal notranslate"><span class="pre">ufunc</span></code>）。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x =&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;np.exp(x) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;np.sqrt(x) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;np.add(x) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x = [0 1 2]
+np.exp(x) = [1.         2.71828183 7.3890561 ]
+np.sqrt(x) = [0.         1.         1.41421356]
+np.add(x) = [0 2 4]
+</pre></div></div>
+</div>
+<p>Numpy 提供了大量的通用函数，详细列表请点击<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.html#routines">这里</a></p>
+</div>
+<div class="section" id="广播">
+<h2>广播<a class="headerlink" href="#广播" title="永久链接至标题">¶</a></h2>
+<p>广播是一种强有力的机制，通过它 NumPy 可以使不同大小的矩阵在一起进行数学计算。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span><span class="mf">20.0</span><span class="p">,</span><span class="mf">20.0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">30.0</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[ 1.,  2.,  3.],
+       [11., 12., 13.],
+       [21., 22., 23.],
+       [31., 32., 33.]])
+</pre></div>
+</div>
+</div>
+<p>想了解更多细节可以点击<a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">这里</a></p>
+</div>
+<div class="section" id="参考资料">
+<h2>参考资料<a class="headerlink" href="#参考资料" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/index.html">Numpy 用户指南</a></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Pandas.html" class="btn btn-neutral float-right" title="Pandas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Jupyter notebook.html" class="btn btn-neutral float-left" title="Jupyter Notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2019
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
