@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>梯度下降法的数学原理 &mdash; 面向数据科学的数据分析教程  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
+        <script type="text/javascript" src="../_static/google_analytics.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="正则化对线性回归的改进" href="正则化对线性回归的改进.html" />
+    <link rel="prev" title="线性回归综述-实战" href="线性回归综述-实战.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 面向数据科学的数据分析教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Python/index.html">Pythond的科学计算工具</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">线性回归</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="线性回归综述.html">线性回归综述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="线性回归综述-实战.html">线性回归综述-实战</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">梯度下降法的数学原理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#证明">证明</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="正则化对线性回归的改进.html">正则化对线性回归的改进</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SGD和自适应学习率对梯度下降法的改进.html">SGD和自适应学习率对梯度下降法的改进</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Logistic-Regression/index.html">逻辑回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Perceptron/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">面向数据科学的数据分析教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">线性回归</a> &raquo;</li>
+        
+      <li>梯度下降法的数学原理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Linear-Regression/梯度下降法的数学原理.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="梯度下降法的数学原理">
+<h1>梯度下降法的数学原理<a class="headerlink" href="#梯度下降法的数学原理" title="永久链接至标题">¶</a></h1>
+<p><strong>梯度下降法</strong>（Gradient descent）是一个一阶最优化算法，通常也称为最速下降法。</p>
+<p>要使用梯度下降法找到一个函数的<strong>局部极小值</strong>，必须向函数上当前点对应梯度（或者是近似梯度）的反方向的规定步长距离点进行迭代搜索。如果相反地向梯度正方向迭代进行搜索，则会接近函数的局部极大值点；这个过程则被称为梯度上升法。</p>
+<p>梯度下降方法基于以下的<strong>观察</strong>：如果实值函数<span class="math notranslate nohighlight">\(F(x)\)</span>在点<span class="math notranslate nohighlight">\(a\)</span>处可微且有定义，那么函数<span class="math notranslate nohighlight">\(F(x)\)</span>在点<span class="math notranslate nohighlight">\(a\)</span>沿着梯度相反的<span class="math notranslate nohighlight">\(- \nabla F(a)\)</span>下降最快。 因此，如果</p>
+<div class="math notranslate nohighlight">
+\[b=a-\lambda \nabla F(a)\]</div>
+<p>对于<span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>且<span class="math notranslate nohighlight">\(\lambda\)</span>是一个足够小的数值时成立，那么<span class="math notranslate nohighlight">\(F(a)\ge F(b)​\)</span>。</p>
+<p>考虑到这一点，我们可以从函数<span class="math notranslate nohighlight">\(F\)</span>的初始<span class="math notranslate nohighlight">\(x_0\)</span>出发，并考虑如下序列<span class="math notranslate nohighlight">\(x_0,x_1,x_2…\)</span>,使得</p>
+<div class="math notranslate nohighlight">
+\[x_{n-1} = x_n-\lambda_n \nabla F(x_n),n \ge0\]</div>
+<p>因此可得到</p>
+<div class="math notranslate nohighlight">
+\[F(x_0) \ge F(x_1) \ge F(x_2) \ge \dots\]</div>
+<p>如果顺利的话<span class="math notranslate nohighlight">\((x_n)\)</span>就能收敛到期望的极值。其中每次迭代中<span class="math notranslate nohighlight">\(\lambda_n\)</span>的值可以改变。</p>
+<p><img alt="image0" src="../_images/gradient-descent.png" /></p>
+<p>上图示例了这一过程，这里假设<span class="math notranslate nohighlight">\(F\)</span>定义在平面上，并且函数图像是一个碗形。蓝色的曲线是等高线（水平集），即函数<span class="math notranslate nohighlight">\(F​\)</span>为常数的集合构成的曲线。箭头指向该点梯度的反方向。（<strong>注：一点处的梯度方向与通过该点的等高线垂直</strong>）。沿着梯度下降方向，将最终到达碗底，即函数<em>F</em>值最小的点。</p>
+<div class="section" id="证明">
+<h2>证明<a class="headerlink" href="#证明" title="永久链接至标题">¶</a></h2>
+<p><strong>证明</strong>：如果实值函数<span class="math notranslate nohighlight">\(F(x)\)</span>在点<span class="math notranslate nohighlight">\(a\)</span>处可微且有定义，那么函数<span class="math notranslate nohighlight">\(F(x)\)</span>在点<span class="math notranslate nohighlight">\(a\)</span>沿着梯度相反的<span class="math notranslate nohighlight">\(- \nabla F(a)\)</span>下降最快。</p>
+<p>提到梯度，就必须从导数、偏导数和方向导数讲起，弄清楚这些概念，才能够正确理解为什么在优化问题中能够使用梯度下降法来优化目标函数。</p>
+<p>在这里先简要介绍一下导数和偏导数。</p>
+<p>在微积分中，导数反映的是函数<span class="math notranslate nohighlight">\(y = f(x)\)</span>在某一点处沿<span class="math notranslate nohighlight">\(x\)</span>轴正方向的变化率。而偏导数与导数在本质上是一致的，都是当自变量的变化量趋于0时，函数值的变化量与自变量变化量比值的极限。直观地说，偏导数也就是函数在某一点上沿坐标轴正方向的的变化率。</p>
+<p>二者区别主要在于：</p>
+<ul class="simple">
+<li><strong>导数</strong>，指的是一元函数中，函数<span class="math notranslate nohighlight">\(y = f(x)\)</span>在某一点处沿<span class="math notranslate nohighlight">\(x\)</span>轴正方向的变化率；</li>
+<li><strong>偏导数</strong>，指的是多元函数中，函数<span class="math notranslate nohighlight">\(y=f(x_{1},x_{2},...,x_{n})\)</span>在某一点处沿某一坐标轴<span class="math notranslate nohighlight">\((x_{1},x_{2},...,x_{n})\)</span>正方向的变化率。</li>
+</ul>
+<p>简要介绍一下导数和偏导数之后，我们主要介绍一下方向导数和梯度，包含完整的推导公式。</p>
+<p>现在我们先来讨论函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在一点<span class="math notranslate nohighlight">\(P\)</span>沿某一方向的变化率问题。</p>
+<p>为了解决这个问题，我们得引入如下<strong>定义</strong>：</p>
+<p>设函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>在某一领域 <span class="math notranslate nohighlight">\(U(p)\)</span>内有定义,从点<span class="math notranslate nohighlight">\(P\)</span>引一条射线<span class="math notranslate nohighlight">\(l\)</span>l ,设<span class="math notranslate nohighlight">\(x\)</span>轴正向到射线<span class="math notranslate nohighlight">\(l\)</span>的转角为<span class="math notranslate nohighlight">\(\varphi\)</span>，并设<span class="math notranslate nohighlight">\(P'(x+\Delta x,y+\Delta y)\)</span>为<span class="math notranslate nohighlight">\(l\)</span>上的另一点且<span class="math notranslate nohighlight">\(P'\in U(p)\)</span>
+。我们考虑函数的增量<span class="math notranslate nohighlight">\(f(x+\Delta x,y+\Delta y)-f(x,y)\)</span>与<span class="math notranslate nohighlight">\()P,P'\)</span>两点间距<span class="math notranslate nohighlight">\(\rho =\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}\)</span>的比值，当<span class="math notranslate nohighlight">\(P'\)</span>沿着<span class="math notranslate nohighlight">\(l\)</span>趋于<span class="math notranslate nohighlight">\(P\)</span>时，如果这个比的极限存在，则称这极限为函数<span class="math notranslate nohighlight">\(f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P\)</span>沿方向<span class="math notranslate nohighlight">\(l\)</span>的<strong>方向导数</strong>，记做<span class="math notranslate nohighlight">\(\frac{\partial f}{\partial l}\)</span>，即：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial {l}}=\lim_{\rho \to 0}{\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho}}\]</div>
+<p>从定义可知，当函数<span class="math notranslate nohighlight">\(f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>的偏导数<span class="math notranslate nohighlight">\(f_x 、f_y\)</span>存在时，函数在点<span class="math notranslate nohighlight">\(P\)</span>沿着<span class="math notranslate nohighlight">\(x\)</span>轴正向<span class="math notranslate nohighlight">\(e_1=(1,0)\)</span>，y轴正向<span class="math notranslate nohighlight">\(e_2=(0,1)\)</span>的方向导数存在且其值依次为<span class="math notranslate nohighlight">\(f_x 、f_y\)</span>，函数在点沿<span class="math notranslate nohighlight">\(x\)</span>轴负向<span class="math notranslate nohighlight">\(e_1^′=(-1,0)\)</span>，<span class="math notranslate nohighlight">\(y\)</span>轴负向<span class="math notranslate nohighlight">\(e_2^′=(0,-1)\)</span>的方向导数也存在且其值依次为<span class="math notranslate nohighlight">\(-f_x 、-f_y\)</span>。</p>
+<p>关于方向导数<span class="math notranslate nohighlight">\(\frac{ \partial f}{\partial l}\)</span>的存在及计算，我们有如下<strong>定理</strong>：</p>
+<p>如果<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>是可微的，那么函数在该点沿任一反向的方向导数都存在，且有</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial {l}}=
+\frac{\partial f}{\partial {x}}cos\varphi+\frac{\partial f}{\partial {y}}sin\varphi\]</div>
+<p>其中<span class="math notranslate nohighlight">\(\varphi\)</span>为<span class="math notranslate nohighlight">\(x\)</span>轴到方向<span class="math notranslate nohighlight">\(l\)</span>的转角。</p>
+<p><strong>证</strong>：根据函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>可微分的假定，函数的增量可以表达为：</p>
+<div class="math notranslate nohighlight">
+\[f(x+\Delta x,y+\Delta y)-f(x,y)=
+\frac{\partial f}{\partial x}\Delta x+\frac{\partial f}{\partial y} \Delta y+o(\rho)\]</div>
+<p>两边各除以<span class="math notranslate nohighlight">\(\rho\)</span>，得到</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho} &amp; = \frac{\partial f}{\partial x}\frac{\Delta x}{\rho}+\frac{\partial f}{\partial y} \frac{\Delta y}{\rho}+\frac{o(\rho)}{\rho} \\
+&amp;=\frac{\partial f}{\partial x}\cos\!\varphi +\frac{\partial f}{\partial y}\sin\!\varphi+\frac{o(\rho)}{\rho}
+\end{align}\end{split}\]</div>
+<p>根据</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial l}=
+\lim_{\rho \to 0}{\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho}}\]</div>
+<p>我们就可以证明方向导数存在且其值为</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial l}=
+\frac{\partial f}{\partial x}\cos \! \varphi +\frac{\partial f}{\partial y}\sin\!\varphi\]</div>
+<p>对于三元函数<span class="math notranslate nohighlight">\(u=f(x,y,z)\)</span>来说，它在空间一点<span class="math notranslate nohighlight">\(P(x,y,z)\)</span>沿着方向<span class="math notranslate nohighlight">\(l\)</span>(设方向的方向角为 　<span class="math notranslate nohighlight">\((\alpha,\beta,\gamma)\)</span>的方向导数，同样可以定义为</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial {l}}=
+\lim_{\rho \to 0}{\frac{f(x+\Delta x,y+\Delta y,z + \Delta z)-f(x,y,z)}{\rho}}\]</div>
+<p>其中<span class="math notranslate nohighlight">\(\rho =\sqrt{(\Delta x)^{2}+(\Delta y)^{2}+(\Delta z)^2},\ \Delta x=\rho \, cos\alpha,\Delta y=\rho \, cos\beta,\Delta z=\rho \, cos\gamma\)</span>。</p>
+<p>同样可以证明，如果函数在所考虑的点处可微分，那么函数在该点沿着<span class="math notranslate nohighlight">\(l\)</span>方向的方向导数为:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial l}=
+\frac{\partial f}{\partial x} \cos\!\alpha+\frac{\partial f}{\partial y} \sin\!\beta+\frac{\partial f}{\partial z} \cos \!\gamma\]</div>
+<p>同样可以扩展到<span class="math notranslate nohighlight">\(n\)</span>元函数<span class="math notranslate nohighlight">\(u=f(x_1,x_2,...,x_n)\)</span>中，这里就不一一陈诉了。</p>
+<p>与方向导数有关联的一个概念是函数的<strong>梯度</strong>。其定义为：</p>
+<p>设函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在平面区域<span class="math notranslate nohighlight">\(D\)</span>内具有一阶连续偏导数，则对于每一点<span class="math notranslate nohighlight">\((x,y)\in D\)</span>，都可定义出一个向量<span class="math notranslate nohighlight">\(\frac{\partial f}{\partial {x}}i+\frac{\partial f}{\partial {y}}j\)</span>，这向量称为函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>的梯度，记作<span class="math notranslate nohighlight">\(grad\ f(x,y)\)</span> ,即</p>
+<div class="math notranslate nohighlight">
+\[grad\ f(x,y)=\frac{\partial f}{\partial {x}}i+\frac{\partial f}{\partial {y}}j\]</div>
+<p>如果设<span class="math notranslate nohighlight">\(e=cos \varphi \,i+sin \varphi \,j\)</span>是与方向<span class="math notranslate nohighlight">\(l\)</span>同方向的单位向量，则由方向导数的计算公式可知:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{\partial f}{\partial {l}}
+&amp;=\frac{\partial f}{\partial {x}}cos\varphi+\frac{\partial f}{\partial {y}}sin\varphi \\
+&amp;=\left \{ \frac{\partial f}{\partial {x}},\frac{\partial f}{\partial {y}} \right\}*\{cos\varphi,sin\varphi\} \\
+&amp;=grad\ f(x,y)*e \\
+&amp;=|grad\ f(x,y)|*cos(grad\ f(x,y),e)
+\end{align*}\end{split}\]</div>
+<p>其中<span class="math notranslate nohighlight">\((grad\ f(x,y),e)\)</span>表示向量<span class="math notranslate nohighlight">\(grad\ f(x,y)\)</span>与<span class="math notranslate nohighlight">\(e\)</span>的夹角。</p>
+<p>由此可以看出，方向导数就是梯度在射线上的投影，当方向<span class="math notranslate nohighlight">\(l\)</span>与梯度的方向一致时，有</p>
+<div class="math notranslate nohighlight">
+\[cos\left(grad\ f(x,y),e\right)=1\]</div>
+<p>从而有<span class="math notranslate nohighlight">\(\frac{\partial f}{\partial {l}}\)</span>最大值。沿梯度方向的方向导数达到最大值，也就是说梯度的方向是函数<span class="math notranslate nohighlight">\(f(x,y)\)</span>在这点增长最快的方向。因此，我们可以得到如下<strong>结论</strong>：函数在某点的梯度是这样一个向量，它的方向与取得最大方向导数的方向一致，而它的模为方向导数的最大值。</p>
+<p>接着我们来<strong>证明</strong>：一点处的梯度方向与通过该点的等高线垂直。</p>
+<p>由梯度的定义可知，梯度的模为</p>
+<div class="math notranslate nohighlight">
+\[|grad \ f(x)|=\sqrt{(\frac{\partial f}{\partial {x}})^2+(\frac{\partial f}{\partial {y}})^2}\]</div>
+<p>当<span class="math notranslate nohighlight">\(\frac{\partial f}{\partial x}\)</span>不为零时，那么<span class="math notranslate nohighlight">\(x\)</span>轴到梯度的转角的正切值为</p>
+<div class="math notranslate nohighlight">
+\[\tan\theta=\frac{\frac{\partial f}{\partial y}}{\frac{\partial f}{\partial x}}\]</div>
+<p>我们知道，一般说来二元函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在几何上表示一个曲面，这曲面被平面<span class="math notranslate nohighlight">\(z=c\)</span> (<span class="math notranslate nohighlight">\(z\)</span>是常数)所截得的曲线的方程为</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+z=f(x,y) \\
+z=c
+\end{cases}\end{split}\]</div>
+<p>这条直线<span class="math notranslate nohighlight">\(l\)</span>在<span class="math notranslate nohighlight">\(xOy\)</span>面上的投影是一条平面曲线<span class="math notranslate nohighlight">\(l^∗\)</span>,它在<span class="math notranslate nohighlight">\(xOy\)</span>平面直角坐标系中的方程为 ：</p>
+<div class="math notranslate nohighlight">
+\[f(x,y)=c\]</div>
+<p>对于曲线<span class="math notranslate nohighlight">\(l^∗\)</span>上的一切点，已给函数的函数值都是<span class="math notranslate nohighlight">\(c\)</span>，所以我们称平面曲线<span class="math notranslate nohighlight">\(l^∗\)</span>为函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>的等高线。</p>
+<p>由于等高线<span class="math notranslate nohighlight">\(f(x,y)=c\)</span>上任一点<span class="math notranslate nohighlight">\((x,y)\)</span>处的发现的斜率为：</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{\frac{\partial y}{\partial x}}=-\frac{1}{\frac{\partial x}{\partial y}}=\frac{f_y}{f_x}\]</div>
+<p>所以梯度<span class="math notranslate nohighlight">\(\frac{\partial f}{\partial x}*i+\frac{\partial f}{\partial y}*j\)</span>为等高线上点<span class="math notranslate nohighlight">\(P\)</span>处的法向量，因此我们可得到梯度与等高线的下述<strong>关系</strong>：函数<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>的梯度的方向与过点<span class="math notranslate nohighlight">\(P\)</span>的等高线<span class="math notranslate nohighlight">\(f(x,y)=c\)</span>在这点的法线的一个方向相同，且从数值较低的等高线指向数值较高的等高线，而且梯度的模等于函数在这个法线方向的方向导数，这个法线方向就是方向导数取得最大值的方向。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="正则化对线性回归的改进.html" class="btn btn-neutral float-right" title="正则化对线性回归的改进" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="线性回归综述-实战.html" class="btn btn-neutral float-left" title="线性回归综述-实战" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2019
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

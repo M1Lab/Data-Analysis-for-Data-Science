@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>数据科学：从基础到实战 &mdash; 面向数据科学的数据分析教程  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/baidu_tongji.js"></script>
+        <script type="text/javascript" src="_static/google_analytics.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gluon.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Pythond的科学计算工具" href="Python/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> 面向数据科学的数据分析教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Python/index.html">Pythond的科学计算工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linear-Regression/index.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logistic-Regression/index.html">逻辑回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Perceptron/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Support-Vector-Machines/index.html">支持向量机</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">面向数据科学的数据分析教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>数据科学：从基础到实战</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="id1">
+<h1>数据科学：从基础到实战<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这是一个深度学习的教学项目。我们将不仅使用数学来阐明深度学习里常用的模型和算法，还提供代码来演示如何从零开始实现它们，并使用真实数据来提供一个交互式的学习体验。这个项目可以作为一本书、上课用的材料、现场演示的案例和一个可以尽情拷贝的代码库。据我们所知，目前并没有哪个项目能既覆盖全面深度学习，又提供交互式的可执行代码。我们将尝试弥补这个空白。</p>
+<p>本项目针对愿意了解深度学习的在校学生、工程师和研究人员。由于我们会从头开始解释深度学习和机器学习的各个概念，你无需具备这些背景知识。我们的目标是让你在完成学习后不但能从概念上理解深度学习，而且能将它应用到实际项目和研究之中。</p>
+<p>本项目是一个开源项目，主要由 <a class="reference external" href="https://astonzhang.github.io/">Aston Zhang</a> （亚马逊云服务应用科学家）、<a class="reference external" href="http://www.cs.cmu.edu/~muli/">李沐</a> （亚马逊云服务首席科学家）、 <a class="reference external" href="http://zacklipton.com/">Zack Lipton</a> （亚马逊云服务应用科学家，卡内基梅隆大学机器学习系助理教授）、 <a class="reference external" href="https://alex.smola.org/">Alex Smola</a> （亚马逊云服务总监）和 <a class="reference external" href="https://github.com/mli/gluon-tutorials-zh/graphs/contributors">来自社区的几十位贡献者</a> 一起完成。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://discuss.gluon.ai/t/topic/7571">【已有80+贡献者，别忘了提供联系方式】成为本书贡献者，获得专享版赠书并被致谢</a>。</li>
+<li><a class="reference external" href="https://discuss.gluon.ai/t/topic/753">第一季十九课视频汇总</a> （本教程在不断改进中。最接近视频中的版本是 <a class="reference external" href="https://github.com/mli/gluon-tutorials-zh/releases/tag/v0.61">v0.6.1</a>）。</li>
+<li>可打印的 <a class="reference external" href="./gluon_tutorials_zh.pdf">PDF 版本在这里</a>。</li>
+<li>课程源代码在 <a class="reference external" href="https://github.com/mli/gluon-tutorials-zh">Github</a> （亲，给个好评加颗星）。</li>
+<li>请使用 <a class="reference external" href="http://discuss.gluon.ai/">http://discuss.gluon.ai/</a> 来进行讨论（每个章节最后也有对应的讨论链接）。</li>
+</ul>
+<div class="section" id="id6">
+<h2>目录<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Python/index.html">Pythond的科学计算工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python/开篇.html">开篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Jupyter notebook.html">Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Numpy.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Seaborn.html">Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python/Scikit-learn.html">Scikit-learn</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Linear-Regression/index.html">线性回归</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linear-Regression/线性回归综述.html">线性回归综述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linear-Regression/线性回归综述-实战.html">线性回归综述-实战</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linear-Regression/梯度下降法的数学原理.html">梯度下降法的数学原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linear-Regression/正则化对线性回归的改进.html">正则化对线性回归的改进</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linear-Regression/SGD和自适应学习率对梯度下降法的改进.html">SGD和自适应学习率对梯度下降法的改进</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Logistic-Regression/index.html">逻辑回归</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Perceptron/index.html">感知器</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Support-Vector-Machines/index.html">支持向量机</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Python/index.html" class="btn btn-neutral float-right" title="Pythond的科学计算工具" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2019
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
