@@ -89,7 +89,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Python/index.html">Pythond的科学计算工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Python/index.html">Python 中的科学计算工具</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">线性回归</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="线性回归综述.html">线性回归综述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="线性回归综述-实战.html">线性回归综述-实战</a></li>
@@ -231,7 +231,7 @@
 。我们考虑函数的增量<span class="math notranslate nohighlight">\(f(x+\Delta x,y+\Delta y)-f(x,y)\)</span>与<span class="math notranslate nohighlight">\()P,P'\)</span>两点间距<span class="math notranslate nohighlight">\(\rho =\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}\)</span>的比值，当<span class="math notranslate nohighlight">\(P'\)</span>沿着<span class="math notranslate nohighlight">\(l\)</span>趋于<span class="math notranslate nohighlight">\(P\)</span>时，如果这个比的极限存在，则称这极限为函数<span class="math notranslate nohighlight">\(f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P\)</span>沿方向<span class="math notranslate nohighlight">\(l\)</span>的<strong>方向导数</strong>，记做<span class="math notranslate nohighlight">\(\frac{\partial f}{\partial l}\)</span>，即：</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial f}{\partial {l}}=\lim_{\rho \to 0}{\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho}}\]</div>
-<p>从定义可知，当函数<span class="math notranslate nohighlight">\(f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>的偏导数<span class="math notranslate nohighlight">\(f_x 、f_y\)</span>存在时，函数在点<span class="math notranslate nohighlight">\(P\)</span>沿着<span class="math notranslate nohighlight">\(x\)</span>轴正向<span class="math notranslate nohighlight">\(e_1=(1,0)\)</span>，y轴正向<span class="math notranslate nohighlight">\(e_2=(0,1)\)</span>的方向导数存在且其值依次为<span class="math notranslate nohighlight">\(f_x 、f_y\)</span>，函数在点沿<span class="math notranslate nohighlight">\(x\)</span>轴负向<span class="math notranslate nohighlight">\(e_1^′=(-1,0)\)</span>，<span class="math notranslate nohighlight">\(y\)</span>轴负向<span class="math notranslate nohighlight">\(e_2^′=(0,-1)\)</span>的方向导数也存在且其值依次为<span class="math notranslate nohighlight">\(-f_x 、-f_y\)</span>。</p>
+<p>从定义可知，当函数<span class="math notranslate nohighlight">\(f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>的偏导数<span class="math notranslate nohighlight">\(f_x,f_y\)</span>存在时，函数在点<span class="math notranslate nohighlight">\(P\)</span>沿着<span class="math notranslate nohighlight">\(x\)</span>轴正向<span class="math notranslate nohighlight">\(e_1=(1,0)\)</span>，y轴正向<span class="math notranslate nohighlight">\(e_2=(0,1)\)</span>的方向导数存在且其值依次为<span class="math notranslate nohighlight">\(f_x,f_y\)</span>，函数在点沿<span class="math notranslate nohighlight">\(x\)</span>轴负向<span class="math notranslate nohighlight">\(e_1^′=(-1,0)\)</span>，<span class="math notranslate nohighlight">\(y\)</span>轴负向<span class="math notranslate nohighlight">\(e_2^′=(0,-1)\)</span>的方向导数也存在且其值依次为<span class="math notranslate nohighlight">\(-f_x,-f_y\)</span>。</p>
 <p>关于方向导数<span class="math notranslate nohighlight">\(\frac{ \partial f}{\partial l}\)</span>的存在及计算，我们有如下<strong>定理</strong>：</p>
 <p>如果<span class="math notranslate nohighlight">\(z=f(x,y)\)</span>在点<span class="math notranslate nohighlight">\(P(x,y)\)</span>是可微的，那么函数在该点沿任一反向的方向导数都存在，且有</p>
 <div class="math notranslate nohighlight">
@@ -244,10 +244,10 @@
 \frac{\partial f}{\partial x}\Delta x+\frac{\partial f}{\partial y} \Delta y+o(\rho)\]</div>
 <p>两边各除以<span class="math notranslate nohighlight">\(\rho\)</span>，得到</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
+\[\begin{split}\begin{aligned}
 \frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho} &amp; = \frac{\partial f}{\partial x}\frac{\Delta x}{\rho}+\frac{\partial f}{\partial y} \frac{\Delta y}{\rho}+\frac{o(\rho)}{\rho} \\
 &amp;=\frac{\partial f}{\partial x}\cos\!\varphi +\frac{\partial f}{\partial y}\sin\!\varphi+\frac{o(\rho)}{\rho}
-\end{align}\end{split}\]</div>
+\end{aligned}\end{split}\]</div>
 <p>根据</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial f}{\partial l}=
@@ -272,13 +272,13 @@
 \[grad\ f(x,y)=\frac{\partial f}{\partial {x}}i+\frac{\partial f}{\partial {y}}j\]</div>
 <p>如果设<span class="math notranslate nohighlight">\(e=cos \varphi \,i+sin \varphi \,j\)</span>是与方向<span class="math notranslate nohighlight">\(l\)</span>同方向的单位向量，则由方向导数的计算公式可知:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{align*}
+\[\begin{split}\begin{aligned}
 \frac{\partial f}{\partial {l}}
 &amp;=\frac{\partial f}{\partial {x}}cos\varphi+\frac{\partial f}{\partial {y}}sin\varphi \\
 &amp;=\left \{ \frac{\partial f}{\partial {x}},\frac{\partial f}{\partial {y}} \right\}*\{cos\varphi,sin\varphi\} \\
 &amp;=grad\ f(x,y)*e \\
 &amp;=|grad\ f(x,y)|*cos(grad\ f(x,y),e)
-\end{align*}\end{split}\]</div>
+\end{aligned}\end{split}\]</div>
 <p>其中<span class="math notranslate nohighlight">\((grad\ f(x,y),e)\)</span>表示向量<span class="math notranslate nohighlight">\(grad\ f(x,y)\)</span>与<span class="math notranslate nohighlight">\(e\)</span>的夹角。</p>
 <p>由此可以看出，方向导数就是梯度在射线上的投影，当方向<span class="math notranslate nohighlight">\(l\)</span>与梯度的方向一致时，有</p>
 <div class="math notranslate nohighlight">

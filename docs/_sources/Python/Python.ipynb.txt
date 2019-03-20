@@ -121,7 +121,8 @@
     "'''\n",
     "这是一个多行注释\n",
     "这是一个多行注释\n",
-    "'''\n"
+    "'''\n",
+    "print('注释')"
    ]
   },
   {
@@ -201,7 +202,7 @@
     "|x / y|除法运算|\n",
     "|x // y|整除运算|\n",
     "|x % y|取模(余数)运算\n",
-    "|- y|负数运算|\n",
+    "|`-` y|负数运算|\n",
     "|x ** y|幂运算，y 为小数时为开方运算|\n",
     "\n",
     "#### 赋值操作符\n",
@@ -866,6 +867,35 @@
   },
   "nteract": {
    "version": "0.12.3"
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
   }
  },
  "nbformat": 4,

@@ -30,8 +30,6 @@
         <script type="text/javascript" src="_static/baidu_tongji.js"></script>
         <script type="text/javascript" src="_static/google_analytics.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -43,7 +41,7 @@
   <link rel="stylesheet" href="_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="Pythond的科学计算工具" href="Python/index.html" /> 
+    <link rel="next" title="Python 中的科学计算工具" href="Python/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,11 +86,18 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="Python/index.html">Pythond的科学计算工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python/index.html">Python 中的科学计算工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data-Preprocessing/index.html">数据预处理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Linear-Regression/index.html">线性回归</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Logistic-Regression/index.html">逻辑回归</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Perceptron/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Neural-Networks/index.html">神经网络</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Support-Vector-Machines/index.html">支持向量机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNN/index.html">KNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Naive-Bayes/index.html">朴素贝叶斯</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decision-Tree/index.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Random-Forest/index.html">随机森林</a></li>
+<li class="toctree-l1"><a class="reference internal" href="K-Means/index.html">K-Means</a></li>
 </ul>
 
             
@@ -200,8 +205,7 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Python/index.html">Pythond的科学计算工具</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Python/开篇.html">开篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python/index.html">Python 中的科学计算工具</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Python/Python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Python/Jupyter notebook.html">Jupyter Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Python/Numpy.html">Numpy</a></li>
@@ -209,6 +213,10 @@
 <li class="toctree-l2"><a class="reference internal" href="Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Python/Seaborn.html">Seaborn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Python/Scikit-learn.html">Scikit-learn</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Data-Preprocessing/index.html">数据预处理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data-Preprocessing/数据清洗.html">数据清洗</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Linear-Regression/index.html">线性回归</a><ul>
@@ -219,13 +227,43 @@
 <li class="toctree-l2"><a class="reference internal" href="Linear-Regression/SGD和自适应学习率对梯度下降法的改进.html">SGD和自适应学习率对梯度下降法的改进</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Logistic-Regression/index.html">逻辑回归</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="Logistic-Regression/index.html">逻辑回归</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Logistic-Regression/逻辑回归综述.html">逻辑回归综述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logistic-Regression/逻辑回归的数学原理.html">逻辑回归的数学原理</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Perceptron/index.html">感知器</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="Perceptron/index.html">感知器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Perceptron/感知器综述.html">感知器综述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Perceptron/感知器的数学原理.html">感知器的数学原理</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Support-Vector-Machines/index.html">支持向量机</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="Neural-Networks/index.html">神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Neural-Networks/神经网络.html">神经网络</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Support-Vector-Machines/index.html">支持向量机</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Support-Vector-Machines/支持向量机综述.html">支持向量机综述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Support-Vector-Machines/支持向量机的数学原理.html">支持向量机的数学原理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="KNN/index.html">KNN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="KNN/KNN.html">KNN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Naive-Bayes/index.html">朴素贝叶斯</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Naive-Bayes/朴素贝叶斯.html">朴素贝叶斯</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Decision-Tree/index.html">决策树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Decision-Tree/决策树.html">决策树</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Random-Forest/index.html">随机森林</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Random-Forest/随机森林.html">随机森林</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="K-Means/index.html">K-Means</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="K-Means/K-Means.html">K-Means</a></li>
 </ul>
 </li>
 </ul>
@@ -240,7 +278,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Python/index.html" class="btn btn-neutral float-right" title="Pythond的科学计算工具" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Python/index.html" class="btn btn-neutral float-right" title="Python 中的科学计算工具" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
