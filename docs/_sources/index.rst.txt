@@ -27,8 +27,15 @@
    :maxdepth: 2
 
    Python/index
+   Data-Preprocessing/index
    Linear-Regression/index
    Logistic-Regression/index
    Perceptron/index
+   Neural-Networks/index
    Support-Vector-Machines/index
+   KNN/index
+   Naive-Bayes/index
+   Decision-Tree/index
+   Random-Forest/index
+   K-Means/index
 

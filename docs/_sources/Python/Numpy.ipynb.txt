@@ -665,9 +665,9 @@
     "\n",
     "| 运算符 | 对应的通用函数  |        描述        |\n",
     "| :----: | :-------------: | :----------------: |\n",
-    "|+    |     np.add      |      加法运算      |\n",
-    "|-    |   np.subtract   |      减法运算      |\n",
-    "|-    |   np.negative   |      负数运算      |\n",
+    "|  `+`   |     np.add      |      加法运算      |\n",
+    "|  `-`   |   np.subtract   |      减法运算      |\n",
+    "|  `-`   |   np.negative   |      负数运算      |\n",
     "|   *    |   np.multipy    |      乘法运算      |\n",
     "|   /    |    np.divide    |      除法运算      |\n",
     "|   //   | np.floor_divide |    取商除法运算    |\n",
@@ -1292,6 +1292,35 @@
   },
   "nteract": {
    "version": "0.12.3"
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
   }
  },
  "nbformat": 4,
