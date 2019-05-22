@@ -27,9 +27,9 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
-        <script type="text/javascript" src="../_static/google_analytics.js"></script>
         <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -38,11 +38,10 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="感知器综述" href="感知器综述.html" />
-    <link rel="prev" title="逻辑回归的数学原理" href="../Logistic-Regression/逻辑回归的数学原理.html" /> 
+    <link rel="next" title="感知器" href="感知器模型.html" />
+    <link rel="prev" title="应用篇" href="../Logistic-Regression/应用篇.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,15 +91,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../Linear-Regression/index.html">线性回归</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Logistic-Regression/index.html">逻辑回归</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">感知器</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="感知器综述.html">感知器综述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="感知器的数学原理.html">感知器的数学原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="感知器模型.html">感知器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="感知器算法的实现.html">应感知器算法的实现</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Neural-Networks/index.html">神经网络</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">感知器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../K-Means/index.html">K-Means</a></li>
 </ul>
@@ -197,8 +196,11 @@
 <h1>感知器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="感知器综述.html">感知器综述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="感知器的数学原理.html">感知器的数学原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="感知器模型.html">感知器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="感知器模型.html#感知器算法的学习策略">感知器算法的学习策略</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="感知器算法的实现.html">应感知器算法的实现</a></li>
 </ul>
 </div>
 </div>
@@ -211,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="感知器综述.html" class="btn btn-neutral float-right" title="感知器综述" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="感知器模型.html" class="btn btn-neutral float-right" title="感知器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Logistic-Regression/逻辑回归的数学原理.html" class="btn btn-neutral float-left" title="逻辑回归的数学原理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Logistic-Regression/应用篇.html" class="btn btn-neutral float-left" title="应用篇" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>感知器 &mdash; 面向数据科学的数据分析教程  文档</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://m1lab.github.io/Data-Analysis-for-Data-Science/Perceptron/感知器模型.html"/>
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="应感知器算法的实现" href="感知器算法的实现.html" />
+    <link rel="prev" title="感知器" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 面向数据科学的数据分析教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Python/index.html">Python 中的科学计算工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Data-Preprocessing/index.html">数据预处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear-Regression/index.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Logistic-Regression/index.html">逻辑回归</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">感知器</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">感知器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#感知器算法的学习策略">感知器算法的学习策略</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="感知器算法的实现.html">应感知器算法的实现</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Neural-Networks/index.html">神经网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../K-Means/index.html">K-Means</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">面向数据科学的数据分析教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">感知器</a> &raquo;</li>
+        
+      <li>感知器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/m1lab/Data-Analysis-for-Data-Science/blob/master/Perceptron/感知器模型.ipynb" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="感知器">
+<h1>感知器<a class="headerlink" href="#感知器" title="永久链接至标题">¶</a></h1>
+<p>感知器（Perceptron）是一种二元线性分类模型，</p>
+<div class="section" id="感知器算法的学习策略">
+<h2>感知器算法的学习策略<a class="headerlink" href="#感知器算法的学习策略" title="永久链接至标题">¶</a></h2>
+<p>这种学习算法在直观上可以这样解释：当一样本数据被误分类，即位于超平面的错误一侧时，感知器通过调整<span class="math notranslate nohighlight">\(w,b\)</span>的值，使超平面朝误分点一侧移动，以减少该误分点与超平面间的距离，直至超平面超过该误分点使其被正确分类，通过不断重复上述步骤。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="感知器算法的实现.html" class="btn btn-neutral float-right" title="应感知器算法的实现" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="感知器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2019
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

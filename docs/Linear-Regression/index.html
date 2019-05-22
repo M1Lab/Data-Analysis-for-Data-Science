@@ -27,9 +27,9 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
-        <script type="text/javascript" src="../_static/google_analytics.js"></script>
         <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -38,10 +38,9 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="线性回归综述" href="线性回归综述.html" />
+    <link rel="next" title="基础篇" href="基础篇.html" />
     <link rel="prev" title="数据清洗" href="../Data-Preprocessing/数据清洗.html" /> 
 </head>
 
@@ -90,11 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Python/index.html">Python 中的科学计算工具</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data-Preprocessing/index.html">数据预处理</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">线性回归</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="线性回归综述.html">线性回归综述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="线性回归综述-实战.html">线性回归综述-实战</a></li>
-<li class="toctree-l2"><a class="reference internal" href="梯度下降法的数学原理.html">梯度下降法的数学原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="正则化对线性回归的改进.html">正则化对线性回归的改进</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SGD和自适应学习率对梯度下降法的改进.html">SGD和自适应学习率对梯度下降法的改进</a></li>
+<li class="toctree-l2"><a class="reference internal" href="基础篇.html">基础篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="应用篇.html">应用篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="原理篇.html">原理篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="进阶篇.html">进阶篇</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Logistic-Regression/index.html">逻辑回归</a></li>
@@ -103,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">感知器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../K-Means/index.html">K-Means</a></li>
 </ul>
@@ -200,21 +198,24 @@
 <h1>线性回归<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="线性回归综述.html">线性回归综述</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="线性回归综述.html#基本概念">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="线性回归综述.html#基本要素">基本要素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="基础篇.html">基础篇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="基础篇.html#一元线性回归模型">一元线性回归模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="基础篇.html#多元线性回归模型">多元线性回归模型</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="线性回归综述-实战.html">线性回归综述-实战</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="线性回归综述-实战.html#生成数据集">生成数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="应用篇.html">应用篇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="应用篇.html#生成数据集">生成数据集</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="梯度下降法的数学原理.html">梯度下降法的数学原理</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="梯度下降法的数学原理.html#证明">证明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="原理篇.html">原理篇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="原理篇.html#梯度下降法的数学原理">梯度下降法的数学原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="原理篇.html#证明">证明</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="正则化对线性回归的改进.html">正则化对线性回归的改进</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SGD和自适应学习率对梯度下降法的改进.html">SGD和自适应学习率对梯度下降法的改进</a></li>
+<li class="toctree-l1"><a class="reference internal" href="进阶篇.html">进阶篇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="进阶篇.html#正则化对线性回归的改进">正则化对线性回归的改进</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -227,7 +228,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="线性回归综述.html" class="btn btn-neutral float-right" title="线性回归综述" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="基础篇.html" class="btn btn-neutral float-right" title="基础篇" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Data-Preprocessing/数据清洗.html" class="btn btn-neutral float-left" title="数据清洗" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

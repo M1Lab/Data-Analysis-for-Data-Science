@@ -1,0 +1,192 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 应用篇"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 生成数据集\n",
+    "\n",
+    "我们构造一个简单的人工训练数据集，它可以使我们能够直观比较学到的参数和真实的模型参数的区别。设数据集样本数为10，输入个数（特征数）为1。给定随机生成的批量样本特征$\\boldsymbol{X} \\in \\mathbb{R}^{10 \\times 1}$，我们使用线性回归模型真实权重$\\boldsymbol{w} = 2$和偏差$b = 4.2$，以及一个随机噪音项$\\epsilon$来生成标签\n",
+    "\n",
+    "$$\\boldsymbol{y} = \\boldsymbol{X}\\boldsymbol{w} + b + \\epsilon,$$\n",
+    "\n",
+    "其中噪音项$\\epsilon$服从均值为0和标准差为0.3的正态分布。下面，让我们生成数据集并查看数据分布情况。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import numpy as np\n",
+    "%matplotlib inline\n",
+    "\n",
+    "np.random.seed(1)\n",
+    "true_w = 2\n",
+    "true_b = 4.2\n",
+    "x = np.random.normal(scale=0.5, size=(10, 1))\n",
+    "y = true_w * x + true_b\n",
+    "y += np.random.normal(scale=0.3, size=y.shape)\n",
+    "\n",
+    "# 使用sklearn.model_selection里的train_test_split模块用于分割数据。\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "# 随机采样50%的数据用于测试，剩下的50%用于构建训练集合。\n",
+    "x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.5, random_state=33)\n",
+    "\n",
+    "plt.scatter(x_train, y_train, marker='o',c = 'red')\n",
+    "plt.scatter(x_test, y_test, marker='x',c = 'black')\n",
+    "plt.xlabel(\"x\")\n",
+    "plt.ylabel(\"y\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.linear_model import LinearRegression\n",
+    "\n",
+    "lr = LinearRegression()\n",
+    "lr.fit(x_train,y_train)\n",
+    "y_pred_1 = lr.predict(x_test)\n",
+    "y_pred_0 = lr.predict(x_train)\n",
+    "print('w: %.3f' % lr.coef_[0][0])\n",
+    "print('b: %.3f' % lr.intercept_[0])\n",
+    "e_train = sum((y_pred_0 - y_train)**2) / (2*len(y_train))\n",
+    "print('error(train): %.3f' % ( sum((y_pred_0 - y_train)**2) / (2*len(y_train))))\n",
+    "print('error(test): %.3f' % ( sum((y_pred_1 - y_test)**2) / (2*len(y_test))))\n",
+    "\n",
+    "plt.plot(x, lr.coef_[0][0] * x + lr.intercept_[0], 'b-')\n",
+    "plt.scatter(x_train, y_train, marker='o',c = 'red')\n",
+    "plt.scatter(x_test, y_test, marker='x',c = 'black')\n",
+    "plt.xlabel(\"x\")\n",
+    "plt.ylabel(\"y\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x1 = np.concatenate((x,x**2), axis=1)\n",
+    "\n",
+    "# 使用sklearn.model_selection里的train_test_split模块用于分割数据。\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "# 随机采样50%的数据用于测试，剩下的50%用于构建训练集合。\n",
+    "x_train, x_test, y_train, y_test = train_test_split(x1, y, test_size=0.5, random_state=33)\n",
+    "\n",
+    "from sklearn.linear_model import LinearRegression\n",
+    "\n",
+    "lr = LinearRegression()\n",
+    "lr.fit(x_train,y_train)\n",
+    "y_pred_1 = lr.predict(x_test)\n",
+    "y_pred_0 = lr.predict(x_train)\n",
+    "print('w: ', lr.coef_[0])\n",
+    "print('b: ', lr.intercept_[0])\n",
+    "print('error(train): %.3f' % ( sum((y_pred_0 - y_train)**2) / (2*len(y_train))))\n",
+    "print('error(test): %.3f' % ( sum((y_pred_1 - y_test)**2) / (2*len(y_test))))\n",
+    "\n",
+    "x1 = np.arange(min(x1[:,0]), max(x1[:,0]), 0.02).reshape(-1, 1)\n",
+    "plt.plot(x1, np.dot(np.concatenate((x1,x1**2), axis=1),lr.coef_[0].reshape(2,1)) + lr.intercept_[0], 'b-')\n",
+    "plt.scatter(x_train[:,0], y_train, marker='o',c = 'red')\n",
+    "plt.scatter(x_test[:,0], y_test, marker='x',c = 'black')\n",
+    "plt.xlabel(\"x\")\n",
+    "plt.ylabel(\"y\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x1 = np.concatenate((x,x**2,x**3), axis=1)\n",
+    "\n",
+    "# 使用sklearn.model_selection里的train_test_split模块用于分割数据。\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "# 随机采样50%的数据用于测试，剩下的50%用于构建训练集合。\n",
+    "x_train, x_test, y_train, y_test = train_test_split(x1, y, test_size=0.5, random_state=33)\n",
+    "\n",
+    "from sklearn.linear_model import LinearRegression\n",
+    "\n",
+    "lr = LinearRegression()\n",
+    "lr.fit(x_train,y_train)\n",
+    "y_pred_1 = lr.predict(x_test)\n",
+    "y_pred_0 = lr.predict(x_train)\n",
+    "print('w: ', lr.coef_[0])\n",
+    "print('b: ', lr.intercept_[0])\n",
+    "print('error(train): %.3f' % ( sum((y_pred_0 - y_train)**2) / (2*len(y_train))))\n",
+    "print('error(test): %.3f' % ( sum((y_pred_1 - y_test)**2) / (2*len(y_test))))\n",
+    "\n",
+    "x2 = np.arange(min(x1[:,0]), max(x1[:,0]), 0.02).reshape(-1, 1)\n",
+    "plt.plot(x2, np.dot(np.concatenate((x2,x2**2,x2**3), axis=1),lr.coef_[0].reshape(3,1)) + lr.intercept_[0], 'b-')\n",
+    "plt.scatter(x_train[:,0], y_train, marker='o',c = 'red')\n",
+    "plt.scatter(x_test[:,0], y_test, marker='x',c = 'black')\n",
+    "plt.xlabel(\"x\")\n",
+    "plt.ylabel(\"y\")\n",
+    "image = plt.show"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.1"
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

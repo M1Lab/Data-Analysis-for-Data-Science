@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>决策树 &mdash; 面向数据科学的数据分析教程  文档</title>
+  <title>感知器 &mdash; 面向数据科学的数据分析教程  文档</title>
   
 
   
@@ -27,9 +27,9 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
-        <script type="text/javascript" src="../_static/google_analytics.js"></script>
         <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -38,11 +38,10 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="决策树" href="决策树.html" />
-    <link rel="prev" title="朴素贝叶斯" href="../Naive-Bayes/朴素贝叶斯.html" /> 
+    <link rel="next" title="基础篇" href="基础篇.html" />
+    <link rel="prev" title="应用篇" href="../Naive-Bayes/应用篇.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,8 +95,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">决策树</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="决策树.html">决策树</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">感知器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="基础篇.html">基础篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="应用篇.html">应用篇</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
@@ -147,7 +147,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>决策树</li>
+      <li>感知器</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,10 +193,11 @@
 }
 </style>
 <div class="section" id="id1">
-<h1>决策树<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>感知器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="决策树.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="基础篇.html">基础篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="应用篇.html">应用篇</a></li>
 </ul>
 </div>
 </div>
@@ -209,10 +210,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="决策树.html" class="btn btn-neutral float-right" title="决策树" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="基础篇.html" class="btn btn-neutral float-right" title="基础篇" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Naive-Bayes/朴素贝叶斯.html" class="btn btn-neutral float-left" title="朴素贝叶斯" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Naive-Bayes/应用篇.html" class="btn btn-neutral float-left" title="应用篇" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

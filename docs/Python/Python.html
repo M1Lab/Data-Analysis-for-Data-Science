@@ -27,9 +27,9 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
-        <script type="text/javascript" src="../_static/google_analytics.js"></script>
         <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -38,7 +38,6 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Jupyter Notebook" href="Jupyter notebook.html" />
@@ -127,8 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Jupyter notebook.html">Jupyter Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Numpy.html">Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Seaborn.html">Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matplotlib+Seaborn.html">Matplotlib+Seaborn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scikit-learn.html">Scikit-learn</a></li>
 </ul>
 </li>
@@ -140,7 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">决策树</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">感知器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../K-Means/index.html">K-Means</a></li>
 </ul>
@@ -542,57 +540,57 @@ x = 2
 <div class="section" id="保留字">
 <h3>保留字<a class="headerlink" href="#保留字" title="永久链接至标题">¶</a></h3>
 <p>保留字是被编程语言内部定义并保留使用的标识符。在 Python 中有 33 个保留字，保留字是编程语言的基本单词，对大小写敏感。</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="16%" />
-<col width="16%" />
-<col width="19%" />
-<col width="22%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 22%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>and</td>
-<td>as</td>
-<td>assert</td>
-<td>break</td>
-<td>class</td>
-<td>continue</td>
+<tbody>
+<tr class="row-odd"><td><p>and</p></td>
+<td><p>as</p></td>
+<td><p>assert</p></td>
+<td><p>break</p></td>
+<td><p>class</p></td>
+<td><p>continue</p></td>
 </tr>
-<tr class="row-even"><td>def</td>
-<td>elif</td>
-<td>else</td>
-<td>except</td>
-<td>finally</td>
-<td>for</td>
+<tr class="row-even"><td><p>def</p></td>
+<td><p>elif</p></td>
+<td><p>else</p></td>
+<td><p>except</p></td>
+<td><p>finally</p></td>
+<td><p>for</p></td>
 </tr>
-<tr class="row-odd"><td>from</td>
-<td>if</td>
-<td>import</td>
-<td>in</td>
-<td>is</td>
-<td>lambda</td>
+<tr class="row-odd"><td><p>from</p></td>
+<td><p>if</p></td>
+<td><p>import</p></td>
+<td><p>in</p></td>
+<td><p>is</p></td>
+<td><p>lambda</p></td>
 </tr>
-<tr class="row-even"><td>not</td>
-<td>or</td>
-<td>pass</td>
-<td>raise</td>
-<td>return</td>
-<td>try</td>
+<tr class="row-even"><td><p>not</p></td>
+<td><p>or</p></td>
+<td><p>pass</p></td>
+<td><p>raise</p></td>
+<td><p>return</p></td>
+<td><p>try</p></td>
 </tr>
-<tr class="row-odd"><td>while</td>
-<td>with</td>
-<td>yield</td>
-<td>del</td>
-<td>global</td>
-<td>nonlocal</td>
+<tr class="row-odd"><td><p>while</p></td>
+<td><p>with</p></td>
+<td><p>yield</p></td>
+<td><p>del</p></td>
+<td><p>global</p></td>
+<td><p>nonlocal</p></td>
 </tr>
-<tr class="row-even"><td>True</td>
-<td>False</td>
-<td>None</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -603,77 +601,77 @@ x = 2
 <p>操作符是完成运算的一种符号体系</p>
 <div class="section" id="运算操作符">
 <h3>运算操作符<a class="headerlink" href="#运算操作符" title="永久链接至标题">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col style="width: 22%" />
+<col style="width: 78%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">操作符</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作符</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>x + y</td>
-<td>加法运算</td>
+<tbody>
+<tr class="row-even"><td><p>x + y</p></td>
+<td><p>加法运算</p></td>
 </tr>
-<tr class="row-odd"><td>x - y</td>
-<td>减法运算</td>
+<tr class="row-odd"><td><p>x - y</p></td>
+<td><p>减法运算</p></td>
 </tr>
-<tr class="row-even"><td>x * y</td>
-<td>乘法运算</td>
+<tr class="row-even"><td><p>x * y</p></td>
+<td><p>乘法运算</p></td>
 </tr>
-<tr class="row-odd"><td>x / y</td>
-<td>除法运算</td>
+<tr class="row-odd"><td><p>x / y</p></td>
+<td><p>除法运算</p></td>
 </tr>
-<tr class="row-even"><td>x // y</td>
-<td>整除运算</td>
+<tr class="row-even"><td><p>x // y</p></td>
+<td><p>整除运算</p></td>
 </tr>
-<tr class="row-odd"><td>x % y</td>
-<td>取模(余数)运算</td>
+<tr class="row-odd"><td><p>x % y</p></td>
+<td><p>取模(余数)运算</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">-</span></code> y</td>
-<td>负数运算</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code> y</p></td>
+<td><p>负数运算</p></td>
 </tr>
-<tr class="row-odd"><td>x ** y</td>
-<td>幂运算，y 为小数时为开方运算</td>
+<tr class="row-odd"><td><p>x ** y</p></td>
+<td><p>幂运算，y 为小数时为开方运算</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="赋值操作符">
 <h3>赋值操作符<a class="headerlink" href="#赋值操作符" title="永久链接至标题">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="35%" />
-<col width="65%" />
+<col style="width: 35%" />
+<col style="width: 65%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">操作符</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作符</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>x += y</td>
-<td>即 x = x + y</td>
+<tbody>
+<tr class="row-even"><td><p>x += y</p></td>
+<td><p>即 x = x + y</p></td>
 </tr>
-<tr class="row-odd"><td>x -= y</td>
-<td>即 x = x - y</td>
+<tr class="row-odd"><td><p>x -= y</p></td>
+<td><p>即 x = x - y</p></td>
 </tr>
-<tr class="row-even"><td>x *= y</td>
-<td>即 x = x * y</td>
+<tr class="row-even"><td><p>x *= y</p></td>
+<td><p>即 x = x * y</p></td>
 </tr>
-<tr class="row-odd"><td>x /= y</td>
-<td>即 x = x / y</td>
+<tr class="row-odd"><td><p>x /= y</p></td>
+<td><p>即 x = x / y</p></td>
 </tr>
-<tr class="row-even"><td>x //= y</td>
-<td>即 x = x // y</td>
+<tr class="row-even"><td><p>x //= y</p></td>
+<td><p>即 x = x // y</p></td>
 </tr>
-<tr class="row-odd"><td>x %= y</td>
-<td>即 x = x % y</td>
+<tr class="row-odd"><td><p>x %= y</p></td>
+<td><p>即 x = x % y</p></td>
 </tr>
-<tr class="row-even"><td>x **= y</td>
-<td>即 x = x ** y</td>
+<tr class="row-even"><td><p>x **= y</p></td>
+<td><p>即 x = x ** y</p></td>
 </tr>
 </tbody>
 </table>
@@ -681,37 +679,37 @@ x = 2
 <div class="section" id="比较运算符">
 <h3>比较运算符<a class="headerlink" href="#比较运算符" title="永久链接至标题">¶</a></h3>
 <p>比较运算结果为 True 或 False。</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="24%" />
-<col width="76%" />
+<col style="width: 24%" />
+<col style="width: 76%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">操作符</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作符</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>==</td>
-<td>等于</td>
+<tbody>
+<tr class="row-even"><td><p>==</p></td>
+<td><p>等于</p></td>
 </tr>
-<tr class="row-odd"><td>！=</td>
-<td>不等于</td>
+<tr class="row-odd"><td><p>！=</p></td>
+<td><p>不等于</p></td>
 </tr>
-<tr class="row-even"><td>&lt;&gt;</td>
-<td>不等于，与 ！= 类似</td>
+<tr class="row-even"><td><p>&lt;&gt;</p></td>
+<td><p>不等于，与 ！= 类似</p></td>
 </tr>
-<tr class="row-odd"><td>&gt;</td>
-<td>大与</td>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>大与</p></td>
 </tr>
-<tr class="row-even"><td>&lt;</td>
-<td>小于</td>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>小于</p></td>
 </tr>
-<tr class="row-odd"><td>&gt;+</td>
-<td>大于等于</td>
+<tr class="row-odd"><td><p>&gt;+</p></td>
+<td><p>大于等于</p></td>
 </tr>
-<tr class="row-even"><td>&lt;=</td>
-<td>小于等于</td>
+<tr class="row-even"><td><p>&lt;=</p></td>
+<td><p>小于等于</p></td>
 </tr>
 </tbody>
 </table>
@@ -721,34 +719,34 @@ x = 2
 <h2>数据类型<a class="headerlink" href="#数据类型" title="永久链接至标题">¶</a></h2>
 <p>数据类型是供计算机程序理解的数据形式，在 Python 中数据类型被分为基本数据类型和复合数据类型。</p>
 <ul class="simple">
-<li>基本数据类型：包括整数、浮点数、复数、布尔数值和空值。</li>
-<li>复合数据类型：包括字符串、列表、元组、字典和集合。</li>
+<li><p>基本数据类型：包括整数、浮点数、复数、布尔数值和空值。</p></li>
+<li><p>复合数据类型：包括字符串、列表、元组、字典和集合。</p></li>
 </ul>
 <div class="section" id="整数-（int）">
 <h3>整数 （int）<a class="headerlink" href="#整数-（int）" title="永久链接至标题">¶</a></h3>
 <p>Python 中的整数与数学中整数的概念一致，可正可负，没有取值范围限制，在 Python 中有 4 种表达形式。</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="24%" />
-<col width="76%" />
+<col style="width: 24%" />
+<col style="width: 76%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">表达形式</th>
-<th class="head">格式</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>表达形式</p></th>
+<th class="head"><p>格式</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>十进制</td>
-<td>-100,0,100</td>
+<tbody>
+<tr class="row-even"><td><p>十进制</p></td>
+<td><p>-100,0,100</p></td>
 </tr>
-<tr class="row-odd"><td>二进制</td>
-<td>以0b或0B开头：0b01,-0B01</td>
+<tr class="row-odd"><td><p>二进制</p></td>
+<td><p>以0b或0B开头：0b01,-0B01</p></td>
 </tr>
-<tr class="row-even"><td>八进制</td>
-<td>以0o或0O开头：0o17,-0O17</td>
+<tr class="row-even"><td><p>八进制</p></td>
+<td><p>以0o或0O开头：0o17,-0O17</p></td>
 </tr>
-<tr class="row-odd"><td>十六进制</td>
-<td>以0x或0X开头：0x0f, -0X0f</td>
+<tr class="row-odd"><td><p>十六进制</p></td>
+<td><p>以0x或0X开头：0x0f, -0X0f</p></td>
 </tr>
 </tbody>
 </table>
@@ -864,43 +862,43 @@ x = 2
 <h3>序列（sequence）<a class="headerlink" href="#序列（sequence）" title="永久链接至标题">¶</a></h3>
 <p>序列是具有先后关系的一组元素，各元素类型可以不同。元素间通过序号引导，通过下标访问序列的特定元素。字符串、列表和元组类型都属于序列类型。</p>
 <p>序号分为两种：正向递增序号和正向递减序号，对应关系如下表：</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="46%" />
-<col width="8%" />
-<col width="15%" />
-<col width="15%" />
-<col width="4%" />
-<col width="12%" />
+<col style="width: 46%" />
+<col style="width: 8%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 4%" />
+<col style="width: 12%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>正向递增序号</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>…</td>
-<td>n-1</td>
+<tbody>
+<tr class="row-odd"><td><p>正向递增序号</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>…</p></td>
+<td><p>n-1</p></td>
 </tr>
-<tr class="row-even"><td>序列</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>…</td>
-<td>n</td>
+<tr class="row-even"><td><p>序列</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>…</p></td>
+<td><p>n</p></td>
 </tr>
-<tr class="row-odd"><td>反向递减序号</td>
-<td>-n</td>
-<td>-n+1</td>
-<td>-n+2</td>
-<td>…</td>
-<td>-1</td>
+<tr class="row-odd"><td><p>反向递减序号</p></td>
+<td><p>-n</p></td>
+<td><p>-n+1</p></td>
+<td><p>-n+2</p></td>
+<td><p>…</p></td>
+<td><p>-1</p></td>
 </tr>
 </tbody>
 </table>
 <p>利用序号可以对序列进行索引和切片操作：</p>
 <ul class="simple">
-<li>索引指通过序号选取序列中特定元素的操作，通过<code class="docutils literal notranslate"><span class="pre">sequence[index]</span></code>使用；</li>
-<li>切片指从序列获取多个元素的操作，通过<code class="docutils literal notranslate"><span class="pre">sequence[start_index:end_index:step]</span></code>使用，<code class="docutils literal notranslate"><span class="pre">start_index</span></code>表示开始索引位置，默认为<code class="docutils literal notranslate"><span class="pre">0</span></code>：<code class="docutils literal notranslate"><span class="pre">end_index</span></code>表示结束索引位置，默认为<code class="docutils literal notranslate"><span class="pre">n-1</span></code>：<code class="docutils literal notranslate"><span class="pre">step</span></code>表示步长，默认为<code class="docutils literal notranslate"><span class="pre">1</span></code>。切片操作前闭后开，不包括<code class="docutils literal notranslate"><span class="pre">sequence[end_index]</span></code>。</li>
+<li><p>索引指通过序号选取序列中特定元素的操作，通过<code class="docutils literal notranslate"><span class="pre">sequence[index]</span></code>使用；</p></li>
+<li><p>切片指从序列获取多个元素的操作，通过<code class="docutils literal notranslate"><span class="pre">sequence[start_index:end_index:step]</span></code>使用，<code class="docutils literal notranslate"><span class="pre">start_index</span></code>表示开始索引位置，默认为<code class="docutils literal notranslate"><span class="pre">0</span></code>：<code class="docutils literal notranslate"><span class="pre">end_index</span></code>表示结束索引位置，默认为<code class="docutils literal notranslate"><span class="pre">n-1</span></code>：<code class="docutils literal notranslate"><span class="pre">step</span></code>表示步长，默认为<code class="docutils literal notranslate"><span class="pre">1</span></code>。切片操作前闭后开，不包括<code class="docutils literal notranslate"><span class="pre">sequence[end_index]</span></code>。</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -928,31 +926,31 @@ x[::-1] = [5, 4, 3, 2, 1]
 </pre></div></div>
 </div>
 <p>字符串、列表和元组类型作为序列的子类，都拥有序列的通用函数和方法：</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="33%" />
-<col width="68%" />
+<col style="width: 33%" />
+<col style="width: 68%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">函数和方法</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>函数和方法</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>len(x)</td>
-<td>返回序列 x 的长度</td>
+<tbody>
+<tr class="row-even"><td><p>len(x)</p></td>
+<td><p>返回序列 x 的长度</p></td>
 </tr>
-<tr class="row-odd"><td>min(x)</td>
-<td>返回序列 x 的最小元素</td>
+<tr class="row-odd"><td><p>min(x)</p></td>
+<td><p>返回序列 x 的最小元素</p></td>
 </tr>
-<tr class="row-even"><td>max(x)</td>
-<td>返回序列 x 的最大元素</td>
+<tr class="row-even"><td><p>max(x)</p></td>
+<td><p>返回序列 x 的最大元素</p></td>
 </tr>
-<tr class="row-odd"><td>x.index(a)或x.index(a,i,j)</td>
-<td>返回序列 x 从 i 开始到 j 位置中第一次出现元素 a 的位置</td>
+<tr class="row-odd"><td><p>x.index(a)或x.index(a,i,j)</p></td>
+<td><p>返回序列 x 从 i 开始到 j 位置中第一次出现元素 a 的位置</p></td>
 </tr>
-<tr class="row-even"><td>x.count(a)</td>
-<td>返回序列 x 中出现元素 a 的总次数</td>
+<tr class="row-even"><td><p>x.count(a)</p></td>
+<td><p>返回序列 x 中出现元素 a 的总次数</p></td>
 </tr>
 </tbody>
 </table>
@@ -1004,45 +1002,45 @@ x[::-1] = [5, 4, 3, 2, 1]
 </div>
 <p>转义符和字母进行组合可以表达出一些字符串无法表达的含义</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">\b</span></code>: 后退</li>
-<li><code class="docutils literal notranslate"><span class="pre">\n</span></code>: 换行，即光标移动到下行行首</li>
-<li><code class="docutils literal notranslate"><span class="pre">\r</span></code>: 回车，即贯标移动到本行行首</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code>: 后退</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code>: 换行，即光标移动到下行行首</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code>: 回车，即贯标移动到本行行首</p></li>
 </ul>
 <p>字符串继承序列类型的函数和方法，但也具有独有的函数和方法：</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="60%" />
-<col width="40%" />
+<col style="width: 60%" />
+<col style="width: 40%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">函数和方法</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>函数和方法</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>str(x)</td>
-<td>返回任意类型<code class="docutils literal notranslate"><span class="pre">x</span></code>所对应的字符串类型，如<code class="docutils literal notranslate"><span class="pre">str(123)</span> <span class="pre">=</span> <span class="pre">&quot;123&quot;</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>str(x)</p></td>
+<td><p>返回任意类型<code class="docutils literal notranslate"><span class="pre">x</span></code>所对应的字符串类型，如<code class="docutils literal notranslate"><span class="pre">str(123)</span> <span class="pre">=</span> <span class="pre">&quot;123&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>hex(x) 或 oct(x)</td>
-<td>返回整数<code class="docutils literal notranslate"><span class="pre">x</span></code>的十六进制或八进制小写形式字符串，如<code class="docutils literal notranslate"><span class="pre">hex(425)</span> <span class="pre">=</span> <span class="pre">&quot;0x1a9&quot;</span></code></td>
+<tr class="row-odd"><td><p>hex(x) 或 oct(x)</p></td>
+<td><p>返回整数<code class="docutils literal notranslate"><span class="pre">x</span></code>的十六进制或八进制小写形式字符串，如<code class="docutils literal notranslate"><span class="pre">hex(425)</span> <span class="pre">=</span> <span class="pre">&quot;0x1a9&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td>chr(x)</td>
-<td>返回 Unicode 编码<code class="docutils literal notranslate"><span class="pre">x</span></code>对应的字符，如<code class="docutils literal notranslate"><span class="pre">chr(1000)</span> <span class="pre">=</span> <span class="pre">'Ϩ'</span></code></td>
+<tr class="row-even"><td><p>chr(x)</p></td>
+<td><p>返回 Unicode 编码<code class="docutils literal notranslate"><span class="pre">x</span></code>对应的字符，如<code class="docutils literal notranslate"><span class="pre">chr(1000)</span> <span class="pre">=</span> <span class="pre">'Ϩ'</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>ord(x)</td>
-<td>返回字符<code class="docutils literal notranslate"><span class="pre">x</span></code>对应的 Unicode 编码，如<code class="docutils literal notranslate"><span class="pre">ord('Ϩ')</span> <span class="pre">=</span> <span class="pre">1000</span></code></td>
+<tr class="row-odd"><td><p>ord(x)</p></td>
+<td><p>返回字符<code class="docutils literal notranslate"><span class="pre">x</span></code>对应的 Unicode 编码，如<code class="docutils literal notranslate"><span class="pre">ord('Ϩ')</span> <span class="pre">=</span> <span class="pre">1000</span></code></p></td>
 </tr>
-<tr class="row-even"><td>str.lower() 或 str.upper()</td>
-<td>返回字符串的副本，全部字符小写/大写,如 <code class="docutils literal notranslate"><span class="pre">'AbCd'.lower()</span> <span class="pre">=</span> <span class="pre">'abcd'</span></code></td>
+<tr class="row-even"><td><p>str.lower() 或 str.upper()</p></td>
+<td><p>返回字符串的副本，全部字符小写/大写,如 <code class="docutils literal notranslate"><span class="pre">'AbCd'.lower()</span> <span class="pre">=</span> <span class="pre">'abcd'</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>str.split(sep=None)</td>
-<td>返回一个列表，由<code class="docutils literal notranslate"><span class="pre">str</span></code>根据<code class="docutils literal notranslate"><span class="pre">sep</span></code>被分隔的部分组，如<code class="docutils literal notranslate"><span class="pre">'a,b,c'.split(',')</span> <span class="pre">=</span> <span class="pre">['a','b','c']</span></code></td>
+<tr class="row-odd"><td><p>str.split(sep=None)</p></td>
+<td><p>返回一个列表，由<code class="docutils literal notranslate"><span class="pre">str</span></code>根据<code class="docutils literal notranslate"><span class="pre">sep</span></code>被分隔的部分组，如<code class="docutils literal notranslate"><span class="pre">'a,b,c'.split(',')</span> <span class="pre">=</span> <span class="pre">['a','b','c']</span></code></p></td>
 </tr>
-<tr class="row-even"><td>str.count(sub)</td>
-<td>返回子串<code class="docutils literal notranslate"><span class="pre">sub</span></code>在<code class="docutils literal notranslate"><span class="pre">str</span></code>中出现的次数，如<code class="docutils literal notranslate"><span class="pre">'abca'.count('a')</span> <span class="pre">=</span> <span class="pre">2</span></code></td>
+<tr class="row-even"><td><p>str.count(sub)</p></td>
+<td><p>返回子串<code class="docutils literal notranslate"><span class="pre">sub</span></code>在<code class="docutils literal notranslate"><span class="pre">str</span></code>中出现的次数，如<code class="docutils literal notranslate"><span class="pre">'abca'.count('a')</span> <span class="pre">=</span> <span class="pre">2</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>str.replace(old, new)</td>
-<td>返回字符串<code class="docutils literal notranslate"><span class="pre">str</span></code>副本，所有<code class="docutils literal notranslate"><span class="pre">old</span></code>子串被替换为<code class="docutils literal notranslate"><span class="pre">new</span></code>，如<code class="docutils literal notranslate"><span class="pre">'abc'.replace('a',</span> <span class="pre">'ab')</span> <span class="pre">=</span> <span class="pre">'abbc'</span></code></td>
+<tr class="row-odd"><td><p>str.replace(old, new)</p></td>
+<td><p>返回字符串<code class="docutils literal notranslate"><span class="pre">str</span></code>副本，所有<code class="docutils literal notranslate"><span class="pre">old</span></code>子串被替换为<code class="docutils literal notranslate"><span class="pre">new</span></code>，如<code class="docutils literal notranslate"><span class="pre">'abc'.replace('a',</span> <span class="pre">'ab')</span> <span class="pre">=</span> <span class="pre">'abbc'</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1073,37 +1071,37 @@ x[::-1] = [5, 4, 3, 2, 1]
 </pre></div></div>
 </div>
 <p>列表继承序列类型的函数和方法，但也具有独有的函数和方法：</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col style="width: 19%" />
+<col style="width: 81%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">函数和方法</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>函数和方法</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>list.append(x)</td>
-<td>在<code class="docutils literal notranslate"><span class="pre">list</span></code>最后增加一个元素<code class="docutils literal notranslate"><span class="pre">x</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>list.append(x)</p></td>
+<td><p>在<code class="docutils literal notranslate"><span class="pre">list</span></code>最后增加一个元素<code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>list.clear()</td>
-<td>删除<code class="docutils literal notranslate"><span class="pre">list</span></code>中所有元素</td>
+<tr class="row-odd"><td><p>list.clear()</p></td>
+<td><p>删除<code class="docutils literal notranslate"><span class="pre">list</span></code>中所有元素</p></td>
 </tr>
-<tr class="row-even"><td>list.copy()</td>
-<td>复制<code class="docutils literal notranslate"><span class="pre">list</span></code>，并生成一个新列表</td>
+<tr class="row-even"><td><p>list.copy()</p></td>
+<td><p>复制<code class="docutils literal notranslate"><span class="pre">list</span></code>，并生成一个新列表</p></td>
 </tr>
-<tr class="row-odd"><td>list.inerst(i,x)</td>
-<td>在<code class="docutils literal notranslate"><span class="pre">list</span></code>的第<code class="docutils literal notranslate"><span class="pre">i</span></code>位置增加元素<code class="docutils literal notranslate"><span class="pre">x</span></code></td>
+<tr class="row-odd"><td><p>list.inerst(i,x)</p></td>
+<td><p>在<code class="docutils literal notranslate"><span class="pre">list</span></code>的第<code class="docutils literal notranslate"><span class="pre">i</span></code>位置增加元素<code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
 </tr>
-<tr class="row-even"><td>list.pop(i)</td>
-<td>返回<code class="docutils literal notranslate"><span class="pre">list</span></code>中第<code class="docutils literal notranslate"><span class="pre">i</span></code>位置元素，并在<code class="docutils literal notranslate"><span class="pre">list</span></code>中删除该元素</td>
+<tr class="row-even"><td><p>list.pop(i)</p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">list</span></code>中第<code class="docutils literal notranslate"><span class="pre">i</span></code>位置元素，并在<code class="docutils literal notranslate"><span class="pre">list</span></code>中删除该元素</p></td>
 </tr>
-<tr class="row-odd"><td>list.remove(x)</td>
-<td>删除<code class="docutils literal notranslate"><span class="pre">list</span></code>出现的第一个元素<code class="docutils literal notranslate"><span class="pre">x</span></code></td>
+<tr class="row-odd"><td><p>list.remove(x)</p></td>
+<td><p>删除<code class="docutils literal notranslate"><span class="pre">list</span></code>出现的第一个元素<code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
 </tr>
-<tr class="row-even"><td>list.reverse()</td>
-<td>颠倒<code class="docutils literal notranslate"><span class="pre">list</span></code></td>
+<tr class="row-even"><td><p>list.reverse()</p></td>
+<td><p>颠倒<code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1157,40 +1155,40 @@ x[&#39;a&#39;] = 1
 </pre></div></div>
 </div>
 <p>字典类型操作函数和方法</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">函数和方法</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>函数和方法</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>dict.keys()</td>
-<td>返回<code class="docutils literal notranslate"><span class="pre">dict</span></code>中所有键信息</td>
+<tbody>
+<tr class="row-even"><td><p>dict.keys()</p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">dict</span></code>中所有键信息</p></td>
 </tr>
-<tr class="row-odd"><td>dict.values()</td>
-<td>返回<code class="docutils literal notranslate"><span class="pre">dict</span></code>中所有值信息</td>
+<tr class="row-odd"><td><p>dict.values()</p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">dict</span></code>中所有值信息</p></td>
 </tr>
-<tr class="row-even"><td>dict.items()</td>
-<td>返回<code class="docutils literal notranslate"><span class="pre">dict</span></code>中所有键值对信息</td>
+<tr class="row-even"><td><p>dict.items()</p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">dict</span></code>中所有键值对信息</p></td>
 </tr>
-<tr class="row-odd"><td>dict.get(k, x)</td>
-<td>若键<code class="docutils literal notranslate"><span class="pre">k</span></code>存在，则返回对应的值，否则返回<code class="docutils literal notranslate"><span class="pre">x</span></code>值</td>
+<tr class="row-odd"><td><p>dict.get(k, x)</p></td>
+<td><p>若键<code class="docutils literal notranslate"><span class="pre">k</span></code>存在，则返回对应的值，否则返回<code class="docutils literal notranslate"><span class="pre">x</span></code>值</p></td>
 </tr>
-<tr class="row-even"><td>dict.pop(k, x)</td>
-<td>若键<code class="docutils literal notranslate"><span class="pre">k</span></code>存在，则取出对应的值，否则返回<code class="docutils literal notranslate"><span class="pre">x</span></code>值</td>
+<tr class="row-even"><td><p>dict.pop(k, x)</p></td>
+<td><p>若键<code class="docutils literal notranslate"><span class="pre">k</span></code>存在，则取出对应的值，否则返回<code class="docutils literal notranslate"><span class="pre">x</span></code>值</p></td>
 </tr>
-<tr class="row-odd"><td>dict.popitem()</td>
-<td>从<code class="docutils literal notranslate"><span class="pre">dict</span></code>随机取出一个键值对，以元组形式返回</td>
+<tr class="row-odd"><td><p>dict.popitem()</p></td>
+<td><p>从<code class="docutils literal notranslate"><span class="pre">dict</span></code>随机取出一个键值对，以元组形式返回</p></td>
 </tr>
-<tr class="row-even"><td>dict.clear()</td>
-<td>删除<code class="docutils literal notranslate"><span class="pre">dict</span></code>所有键值对</td>
+<tr class="row-even"><td><p>dict.clear()</p></td>
+<td><p>删除<code class="docutils literal notranslate"><span class="pre">dict</span></code>所有键值对</p></td>
 </tr>
-<tr class="row-odd"><td>len(dict)</td>
-<td>返回<code class="docutils literal notranslate"><span class="pre">dice</span></code>中元素个数</td>
+<tr class="row-odd"><td><p>len(dict)</p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">dice</span></code>中元素个数</p></td>
 </tr>
 </tbody>
 </table>

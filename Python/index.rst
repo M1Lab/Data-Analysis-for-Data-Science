@@ -65,6 +65,5 @@ Plotly 是 一个动态绘图模块，它可以让你轻松构建复杂的图形
    Jupyter notebook
    Numpy
    Pandas
-   Matplotlib
-   Seaborn
+   Matplotlib+Seaborn
    Scikit-learn
