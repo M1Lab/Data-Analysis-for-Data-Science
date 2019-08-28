@@ -87,6 +87,7 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 中的科学计算工具</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Jupyter notebook.html">Jupyter Notebook</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Numpy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#版本">版本</a></li>
@@ -125,7 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">决策树</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../K-Means/index.html">K-Means</a></li>
 </ul>
@@ -492,9 +493,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[[1 5 7]
- [3 5 6]
- [1 1 8]]
+[[7 1 9]
+ [2 2 9]
+ [0 4 9]]
 
 x.ndim: 2
 x.shape: (3, 3)
@@ -749,9 +750,9 @@ x.nbytes: 72
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[0.67734149, 0.37059512, 0.56892435],
-       [0.07596591, 0.49723442, 0.71263472],
-       [0.05661176, 0.93346546, 0.68622069]])
+<span></span>array([[0.48575322, 0.72737388, 0.32180274],
+       [0.68450497, 0.37856702, 0.7614299 ],
+       [0.83093308, 0.66726084, 0.79841631]])
 </pre></div>
 </div>
 </div>
@@ -771,9 +772,9 @@ x.nbytes: 72
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[-0.29314435,  0.6318284 , -0.79644111],
-       [-0.28108722, -1.52983732,  0.9890599 ],
-       [ 2.02605446,  0.33962339,  0.10162185]])
+<span></span>array([[-0.04566183,  0.72873581, -1.10870786],
+       [ 0.32082532,  1.78345795,  0.15090186],
+       [-0.48690445, -0.11890733,  1.85462935]])
 </pre></div>
 </div>
 </div>
@@ -793,9 +794,9 @@ x.nbytes: 72
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[9, 1, 6],
-       [5, 7, 0],
-       [2, 6, 3]])
+<span></span>array([[5, 2, 2],
+       [7, 4, 3],
+       [6, 0, 5]])
 </pre></div>
 </div>
 </div>
@@ -839,7 +840,7 @@ x % 2 =  [0 1 0 1]
 </pre></div></div>
 </div>
 <p>运算符与通用函数的对应关系如下表所示：</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 38%" />
@@ -950,14 +951,14 @@ A.dot(B) =
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[[5 6 5]
- [7 8 4]
- [1 8 0]]
+[[8 0 4]
+ [0 5 0]
+ [4 1 9]]
 
-x[1,1] = 8
+x[1,1] = 5
 x[1:,1:] =
- [[8 4]
- [8 0]]
+ [[5 0]
+ [1 9]]
 </pre></div></div>
 </div>
 </div>
@@ -989,22 +990,22 @@ x[1:,1:] =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 x =
- [[6 6 1 2 0 0]
- [1 9 0 3 5 5]
- [8 2 6 9 4 4]
- [2 3 6 2 4 4]]
+ [[1 8 8 9 4 5]
+ [7 0 4 7 3 5]
+ [1 5 3 2 0 3]
+ [8 4 3 2 2 3]]
 
 np.sort(x, axis=0) =
- [[1 2 0 2 0 0]
- [2 3 1 2 4 4]
- [6 6 6 3 4 4]
- [8 9 6 9 5 5]]
+ [[1 0 3 2 0 3]
+ [1 4 3 2 2 3]
+ [7 5 4 7 3 5]
+ [8 8 8 9 4 5]]
 
 np.sort(x, axis=1) =
- [[0 0 1 2 6 6]
- [0 1 3 5 5 9]
- [2 4 4 6 8 9]
- [2 2 3 4 4 6]]
+ [[1 4 5 8 8 9]
+ [0 3 4 5 7 7]
+ [0 1 2 3 3 5]
+ [2 2 3 3 4 8]]
 </pre></div></div>
 </div>
 </div>
@@ -1032,22 +1033,22 @@ np.sort(x, axis=1) =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 x =
- [[4 0 1]
- [8 8 1]
- [1 5 5]]
+ [[3 9 2]
+ [8 2 0]
+ [8 4 9]]
 
 通过变形获得的行向量:
- [[4 0 1 8 8 1 1 5 5]]
+ [[3 9 2 8 2 0 8 4 9]]
 通过变形获得的列向量:
- [[4]
+ [[3]
+ [9]
+ [2]
+ [8]
+ [2]
  [0]
- [1]
  [8]
- [8]
- [1]
- [1]
- [5]
- [5]]
+ [4]
+ [9]]
 </pre></div></div>
 </div>
 </div>
@@ -1070,13 +1071,13 @@ x =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 x =
- [[5 0 7]
- [7 6 3]]
+ [[3 2 3]
+ [8 4 9]]
 
 x.T =
- [[5 7]
- [0 6]
- [7 3]]
+ [[3 8]
+ [2 4]
+ [3 9]]
 </pre></div></div>
 </div>
 </div>
@@ -1210,9 +1211,9 @@ x.T =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 通过np.split()方法拆分:
- [array([[0, 3, 1]]), array([[3, 0, 0]]), array([[5, 8, 7]])]
+ [array([[9, 3, 7]]), array([[1, 9, 0]]), array([[8, 8, 9]])]
 通过np.hsplit()方法拆分:
- [array([[0, 3, 1]]), array([[3, 0, 0]]), array([[5, 8, 7]])]
+ [array([[9, 3, 7]]), array([[1, 9, 0]]), array([[8, 8, 9]])]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1232,21 +1233,21 @@ x.T =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 通过np.split()方法拆分:
- [array([[0],
-       [3],
-       [5]]), array([[3],
+ [array([[9],
+       [1],
+       [8]]), array([[3],
+       [9],
+       [8]]), array([[7],
        [0],
-       [8]]), array([[1],
-       [0],
-       [7]])]
+       [9]])]
 通过np.hsplit()方法拆分:
- [array([[0],
-       [3],
-       [5]]), array([[3],
+ [array([[9],
+       [1],
+       [8]]), array([[3],
+       [9],
+       [8]]), array([[7],
        [0],
-       [8]]), array([[1],
-       [0],
-       [7]])]
+       [9]])]
 </pre></div></div>
 </div>
 </div>
@@ -1314,7 +1315,7 @@ np.add(x) = [0 2 4]
 <div class="section" id="参考资料">
 <h2>参考资料<a class="headerlink" href="#参考资料" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/index.html">Numpy 用户指南</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/index.html">Numpy 官方文档</a></p></li>
 </ul>
 </div>
 </div>
