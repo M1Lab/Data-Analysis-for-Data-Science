@@ -138,7 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Support-Vector-Machines/index.html">支持向量机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KNN/index.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Naive-Bayes/index.html">朴素贝叶斯</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">感知器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decision-Tree/index.html">决策树</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Random-Forest/index.html">随机森林</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../K-Means/index.html">K-Means</a></li>
 </ul>
@@ -452,7 +452,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;3.6.8 |Anaconda, Inc.| (default, Dec 30 2018, 18:50:55) [MSC v.1915 64 bit (AMD64)]&#39;
+<span></span>&#39;3.7.1 | packaged by conda-forge | (default, Feb 26 2019, 04:48:14) \n[GCC 7.3.0]&#39;
 </pre></div>
 </div>
 </div>
@@ -469,9 +469,9 @@ div.rendered_html tbody tr:hover {
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
+<div class="output_area docutils container">
 <div class="highlight"><pre>
-Python 3.6.8 :: Anaconda, Inc.
+Python 3.7.1
 </pre></div></div>
 </div>
 </div>
@@ -500,13 +500,12 @@ Python 3.6.8 :: Anaconda, Inc.
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;\n这是一个多行注释\n这是一个多行注释\n&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+注释
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="变量">
@@ -540,7 +539,7 @@ x = 2
 <div class="section" id="保留字">
 <h3>保留字<a class="headerlink" href="#保留字" title="永久链接至标题">¶</a></h3>
 <p>保留字是被编程语言内部定义并保留使用的标识符。在 Python 中有 33 个保留字，保留字是编程语言的基本单词，对大小写敏感。</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 14%" />
 <col style="width: 14%" />
@@ -601,7 +600,7 @@ x = 2
 <p>操作符是完成运算的一种符号体系</p>
 <div class="section" id="运算操作符">
 <h3>运算操作符<a class="headerlink" href="#运算操作符" title="永久链接至标题">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 22%" />
 <col style="width: 78%" />
@@ -641,7 +640,7 @@ x = 2
 </div>
 <div class="section" id="赋值操作符">
 <h3>赋值操作符<a class="headerlink" href="#赋值操作符" title="永久链接至标题">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 35%" />
 <col style="width: 65%" />
@@ -679,7 +678,7 @@ x = 2
 <div class="section" id="比较运算符">
 <h3>比较运算符<a class="headerlink" href="#比较运算符" title="永久链接至标题">¶</a></h3>
 <p>比较运算结果为 True 或 False。</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
 <col style="width: 76%" />
@@ -725,7 +724,7 @@ x = 2
 <div class="section" id="整数-（int）">
 <h3>整数 （int）<a class="headerlink" href="#整数-（int）" title="永久链接至标题">¶</a></h3>
 <p>Python 中的整数与数学中整数的概念一致，可正可负，没有取值范围限制，在 Python 中有 4 种表达形式。</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
 <col style="width: 76%" />
@@ -862,7 +861,7 @@ x = 2
 <h3>序列（sequence）<a class="headerlink" href="#序列（sequence）" title="永久链接至标题">¶</a></h3>
 <p>序列是具有先后关系的一组元素，各元素类型可以不同。元素间通过序号引导，通过下标访问序列的特定元素。字符串、列表和元组类型都属于序列类型。</p>
 <p>序号分为两种：正向递增序号和正向递减序号，对应关系如下表：</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
 <col style="width: 8%" />
@@ -926,7 +925,7 @@ x[::-1] = [5, 4, 3, 2, 1]
 </pre></div></div>
 </div>
 <p>字符串、列表和元组类型作为序列的子类，都拥有序列的通用函数和方法：</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 68%" />
@@ -1007,7 +1006,7 @@ x[::-1] = [5, 4, 3, 2, 1]
 <li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code>: 回车，即贯标移动到本行行首</p></li>
 </ul>
 <p>字符串继承序列类型的函数和方法，但也具有独有的函数和方法：</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 60%" />
 <col style="width: 40%" />
@@ -1071,7 +1070,7 @@ x[::-1] = [5, 4, 3, 2, 1]
 </pre></div></div>
 </div>
 <p>列表继承序列类型的函数和方法，但也具有独有的函数和方法：</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
 <col style="width: 81%" />
@@ -1155,7 +1154,7 @@ x[&#39;a&#39;] = 1
 </pre></div></div>
 </div>
 <p>字典类型操作函数和方法</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 79%" />
@@ -1261,8 +1260,10 @@ x[&#39;a&#39;] = 1
 </div>
 <div class="section" id="参考资料">
 <h2>参考资料<a class="headerlink" href="#参考资料" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://www.icourse163.org/course/BIT-268001?tid=1003243006">北京理工大学：Python语言程序设计</a></p>
-<p><a class="reference external" href="http://www.runoob.com/python3/python3-tutorial.html">菜鸟教程：Python3教程</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/zh-cn/3/">Python 官方中文文档</a></p></li>
+<li><p><a class="reference external" href="https://www.icourse163.org/course/BIT-268001?tid=1003243006">北京理工大学：Python语言程序设计</a></p></li>
+</ul>
 </div>
 </div>
 
