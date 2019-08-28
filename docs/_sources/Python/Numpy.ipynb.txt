@@ -26,8 +26,8 @@
    "execution_count": 1,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:08.661513Z",
-     "start_time": "2019-05-22T10:20:08.585557Z"
+     "end_time": "2019-04-13T06:30:06.933072Z",
+     "start_time": "2019-04-13T06:30:06.861302Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -62,8 +62,8 @@
    "execution_count": 2,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:08.742136Z",
-     "start_time": "2019-05-22T10:20:08.737931Z"
+     "end_time": "2019-04-13T06:30:07.014551Z",
+     "start_time": "2019-04-13T06:30:07.011468Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -103,8 +103,8 @@
    "execution_count": 3,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.007731Z",
-     "start_time": "2019-05-22T10:20:08.996856Z"
+     "end_time": "2019-04-13T06:30:07.304571Z",
+     "start_time": "2019-04-13T06:30:07.285622Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -114,9 +114,9 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "[[7 1 9]\n",
-      " [2 2 9]\n",
-      " [0 4 9]]\n",
+      "[[1 5 7]\n",
+      " [3 5 6]\n",
+      " [1 1 8]]\n",
       "\n",
       "x.ndim: 2\n",
       "x.shape: (3, 3)\n",
@@ -153,8 +153,8 @@
    "execution_count": 4,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.124244Z",
-     "start_time": "2019-05-22T10:20:09.117642Z"
+     "end_time": "2019-04-13T06:30:07.435573Z",
+     "start_time": "2019-04-13T06:30:07.429162Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -188,8 +188,8 @@
    "execution_count": 5,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.295387Z",
-     "start_time": "2019-05-22T10:20:09.288575Z"
+     "end_time": "2019-04-13T06:30:07.568679Z",
+     "start_time": "2019-04-13T06:30:07.561177Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -223,8 +223,8 @@
    "execution_count": 6,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.415271Z",
-     "start_time": "2019-05-22T10:20:09.408690Z"
+     "end_time": "2019-04-13T06:30:07.703419Z",
+     "start_time": "2019-04-13T06:30:07.695646Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -258,8 +258,8 @@
    "execution_count": 7,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.540203Z",
-     "start_time": "2019-05-22T10:20:09.533310Z"
+     "end_time": "2019-04-13T06:30:07.832769Z",
+     "start_time": "2019-04-13T06:30:07.820018Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -297,8 +297,8 @@
    "execution_count": 8,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.708440Z",
-     "start_time": "2019-05-22T10:20:09.702764Z"
+     "end_time": "2019-04-13T06:30:07.953119Z",
+     "start_time": "2019-04-13T06:30:07.946998Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -333,8 +333,8 @@
    "execution_count": 9,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.838844Z",
-     "start_time": "2019-05-22T10:20:09.833930Z"
+     "end_time": "2019-04-13T06:30:08.079007Z",
+     "start_time": "2019-04-13T06:30:08.073389Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -371,8 +371,8 @@
    "execution_count": 10,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:09.970266Z",
-     "start_time": "2019-05-22T10:20:09.957230Z"
+     "end_time": "2019-04-13T06:30:08.226236Z",
+     "start_time": "2019-04-13T06:30:08.214386Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -409,8 +409,8 @@
    "execution_count": 11,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.090198Z",
-     "start_time": "2019-05-22T10:20:10.084470Z"
+     "end_time": "2019-04-13T06:30:08.355871Z",
+     "start_time": "2019-04-13T06:30:08.348774Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -450,8 +450,8 @@
    "execution_count": 12,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.206719Z",
-     "start_time": "2019-05-22T10:20:10.200914Z"
+     "end_time": "2019-04-13T06:30:08.487961Z",
+     "start_time": "2019-04-13T06:30:08.482478Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -479,8 +479,8 @@
    "execution_count": 13,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.214283Z",
-     "start_time": "2019-05-22T10:20:10.209465Z"
+     "end_time": "2019-04-13T06:30:08.495769Z",
+     "start_time": "2019-04-13T06:30:08.490400Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -519,8 +519,8 @@
    "execution_count": 14,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.337409Z",
-     "start_time": "2019-05-22T10:20:10.329511Z"
+     "end_time": "2019-04-13T06:30:08.615090Z",
+     "start_time": "2019-04-13T06:30:08.607221Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -529,9 +529,9 @@
     {
      "data": {
       "text/plain": [
-       "array([[0.48575322, 0.72737388, 0.32180274],\n",
-       "       [0.68450497, 0.37856702, 0.7614299 ],\n",
-       "       [0.83093308, 0.66726084, 0.79841631]])"
+       "array([[0.67734149, 0.37059512, 0.56892435],\n",
+       "       [0.07596591, 0.49723442, 0.71263472],\n",
+       "       [0.05661176, 0.93346546, 0.68622069]])"
       ]
      },
      "execution_count": 14,
@@ -550,8 +550,8 @@
    "execution_count": 15,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.346209Z",
-     "start_time": "2019-05-22T10:20:10.340320Z"
+     "end_time": "2019-04-13T06:30:08.629702Z",
+     "start_time": "2019-04-13T06:30:08.621122Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -560,9 +560,9 @@
     {
      "data": {
       "text/plain": [
-       "array([[-0.04566183,  0.72873581, -1.10870786],\n",
-       "       [ 0.32082532,  1.78345795,  0.15090186],\n",
-       "       [-0.48690445, -0.11890733,  1.85462935]])"
+       "array([[-0.29314435,  0.6318284 , -0.79644111],\n",
+       "       [-0.28108722, -1.52983732,  0.9890599 ],\n",
+       "       [ 2.02605446,  0.33962339,  0.10162185]])"
       ]
      },
      "execution_count": 15,
@@ -581,8 +581,8 @@
    "execution_count": 16,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.386700Z",
-     "start_time": "2019-05-22T10:20:10.378749Z"
+     "end_time": "2019-04-13T06:30:08.639858Z",
+     "start_time": "2019-04-13T06:30:08.633224Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -591,9 +591,9 @@
     {
      "data": {
       "text/plain": [
-       "array([[5, 2, 2],\n",
-       "       [7, 4, 3],\n",
-       "       [6, 0, 5]])"
+       "array([[9, 1, 6],\n",
+       "       [5, 7, 0],\n",
+       "       [2, 6, 3]])"
       ]
      },
      "execution_count": 16,
@@ -623,8 +623,8 @@
    "execution_count": 17,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.511355Z",
-     "start_time": "2019-05-22T10:20:10.496250Z"
+     "end_time": "2019-04-13T06:30:08.759575Z",
+     "start_time": "2019-04-13T06:30:08.745884Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -687,8 +687,8 @@
    "execution_count": 18,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.749278Z",
-     "start_time": "2019-05-22T10:20:10.731846Z"
+     "end_time": "2019-04-13T06:30:08.992686Z",
+     "start_time": "2019-04-13T06:30:08.974304Z"
     }
    },
    "outputs": [
@@ -737,8 +737,8 @@
    "execution_count": 19,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.866374Z",
-     "start_time": "2019-05-22T10:20:10.855045Z"
+     "end_time": "2019-04-13T06:30:09.098650Z",
+     "start_time": "2019-04-13T06:30:09.090947Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -748,14 +748,14 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "[[8 0 4]\n",
-      " [0 5 0]\n",
-      " [4 1 9]]\n",
+      "[[5 6 5]\n",
+      " [7 8 4]\n",
+      " [1 8 0]]\n",
       "\n",
-      "x[1,1] = 5\n",
+      "x[1,1] = 8\n",
       "x[1:,1:] =\n",
-      " [[5 0]\n",
-      " [1 9]]\n"
+      " [[8 4]\n",
+      " [8 0]]\n"
      ]
     }
    ],
@@ -785,8 +785,8 @@
    "execution_count": 20,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:10.987019Z",
-     "start_time": "2019-05-22T10:20:10.976822Z"
+     "end_time": "2019-04-13T06:30:09.225363Z",
+     "start_time": "2019-04-13T06:30:09.215401Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -797,22 +797,22 @@
      "output_type": "stream",
      "text": [
       "x =\n",
-      " [[1 8 8 9 4 5]\n",
-      " [7 0 4 7 3 5]\n",
-      " [1 5 3 2 0 3]\n",
-      " [8 4 3 2 2 3]]\n",
+      " [[6 6 1 2 0 0]\n",
+      " [1 9 0 3 5 5]\n",
+      " [8 2 6 9 4 4]\n",
+      " [2 3 6 2 4 4]]\n",
       "\n",
       "np.sort(x, axis=0) =\n",
-      " [[1 0 3 2 0 3]\n",
-      " [1 4 3 2 2 3]\n",
-      " [7 5 4 7 3 5]\n",
-      " [8 8 8 9 4 5]]\n",
+      " [[1 2 0 2 0 0]\n",
+      " [2 3 1 2 4 4]\n",
+      " [6 6 6 3 4 4]\n",
+      " [8 9 6 9 5 5]]\n",
       "\n",
       "np.sort(x, axis=1) =\n",
-      " [[1 4 5 8 8 9]\n",
-      " [0 3 4 5 7 7]\n",
-      " [0 1 2 3 3 5]\n",
-      " [2 2 3 3 4 8]]\n"
+      " [[0 0 1 2 6 6]\n",
+      " [0 1 3 5 5 9]\n",
+      " [2 4 4 6 8 9]\n",
+      " [2 2 3 4 4 6]]\n"
      ]
     }
    ],
@@ -842,8 +842,8 @@
    "execution_count": 21,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.111966Z",
-     "start_time": "2019-05-22T10:20:11.095748Z"
+     "end_time": "2019-04-13T06:30:09.347287Z",
+     "start_time": "2019-04-13T06:30:09.334449Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -854,22 +854,22 @@
      "output_type": "stream",
      "text": [
       "x =\n",
-      " [[3 9 2]\n",
-      " [8 2 0]\n",
-      " [8 4 9]]\n",
+      " [[4 0 1]\n",
+      " [8 8 1]\n",
+      " [1 5 5]]\n",
       "\n",
       "通过变形获得的行向量:\n",
-      " [[3 9 2 8 2 0 8 4 9]]\n",
+      " [[4 0 1 8 8 1 1 5 5]]\n",
       "通过变形获得的列向量:\n",
-      " [[3]\n",
-      " [9]\n",
-      " [2]\n",
-      " [8]\n",
-      " [2]\n",
+      " [[4]\n",
       " [0]\n",
+      " [1]\n",
       " [8]\n",
-      " [4]\n",
-      " [9]]\n"
+      " [8]\n",
+      " [1]\n",
+      " [1]\n",
+      " [5]\n",
+      " [5]]\n"
      ]
     }
    ],
@@ -894,8 +894,8 @@
    "execution_count": 22,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.238003Z",
-     "start_time": "2019-05-22T10:20:11.227315Z"
+     "end_time": "2019-04-13T06:30:09.458367Z",
+     "start_time": "2019-04-13T06:30:09.452807Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -906,13 +906,13 @@
      "output_type": "stream",
      "text": [
       "x =\n",
-      " [[3 2 3]\n",
-      " [8 4 9]]\n",
+      " [[5 0 7]\n",
+      " [7 6 3]]\n",
       "\n",
       "x.T =\n",
-      " [[3 8]\n",
-      " [2 4]\n",
-      " [3 9]]\n"
+      " [[5 7]\n",
+      " [0 6]\n",
+      " [7 3]]\n"
      ]
     }
    ],
@@ -938,8 +938,8 @@
    "execution_count": 23,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.351712Z",
-     "start_time": "2019-05-22T10:20:11.345635Z"
+     "end_time": "2019-04-13T06:30:09.569649Z",
+     "start_time": "2019-04-13T06:30:09.563662Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -968,8 +968,8 @@
    "execution_count": 24,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.362223Z",
-     "start_time": "2019-05-22T10:20:11.355090Z"
+     "end_time": "2019-04-13T06:30:09.579635Z",
+     "start_time": "2019-04-13T06:30:09.573312Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1003,8 +1003,8 @@
    "execution_count": 25,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.372488Z",
-     "start_time": "2019-05-22T10:20:11.365609Z"
+     "end_time": "2019-04-13T06:30:09.590098Z",
+     "start_time": "2019-04-13T06:30:09.583588Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1052,8 +1052,8 @@
    "execution_count": 26,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.595324Z",
-     "start_time": "2019-05-22T10:20:11.589409Z"
+     "end_time": "2019-04-13T06:30:09.798613Z",
+     "start_time": "2019-04-13T06:30:09.792415Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1088,8 +1088,8 @@
    "execution_count": 27,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.713962Z",
-     "start_time": "2019-05-22T10:20:11.707708Z"
+     "end_time": "2019-04-13T06:30:09.914046Z",
+     "start_time": "2019-04-13T06:30:09.906788Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1100,9 +1100,9 @@
      "output_type": "stream",
      "text": [
       "通过np.split()方法拆分:\n",
-      " [array([[9, 3, 7]]), array([[1, 9, 0]]), array([[8, 8, 9]])]\n",
+      " [array([[0, 3, 1]]), array([[3, 0, 0]]), array([[5, 8, 7]])]\n",
       "通过np.hsplit()方法拆分:\n",
-      " [array([[9, 3, 7]]), array([[1, 9, 0]]), array([[8, 8, 9]])]\n"
+      " [array([[0, 3, 1]]), array([[3, 0, 0]]), array([[5, 8, 7]])]\n"
      ]
     }
    ],
@@ -1118,8 +1118,8 @@
    "execution_count": 28,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.728339Z",
-     "start_time": "2019-05-22T10:20:11.716357Z"
+     "end_time": "2019-04-13T06:30:09.922641Z",
+     "start_time": "2019-04-13T06:30:09.917135Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1130,21 +1130,21 @@
      "output_type": "stream",
      "text": [
       "通过np.split()方法拆分:\n",
-      " [array([[9],\n",
-      "       [1],\n",
-      "       [8]]), array([[3],\n",
-      "       [9],\n",
-      "       [8]]), array([[7],\n",
+      " [array([[0],\n",
+      "       [3],\n",
+      "       [5]]), array([[3],\n",
       "       [0],\n",
-      "       [9]])]\n",
+      "       [8]]), array([[1],\n",
+      "       [0],\n",
+      "       [7]])]\n",
       "通过np.hsplit()方法拆分:\n",
-      " [array([[9],\n",
-      "       [1],\n",
-      "       [8]]), array([[3],\n",
-      "       [9],\n",
-      "       [8]]), array([[7],\n",
+      " [array([[0],\n",
+      "       [3],\n",
+      "       [5]]), array([[3],\n",
       "       [0],\n",
-      "       [9]])]\n"
+      "       [8]]), array([[1],\n",
+      "       [0],\n",
+      "       [7]])]\n"
      ]
     }
    ],
@@ -1168,8 +1168,8 @@
    "execution_count": 29,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:11.854066Z",
-     "start_time": "2019-05-22T10:20:11.843012Z"
+     "end_time": "2019-04-13T06:30:10.045080Z",
+     "start_time": "2019-04-13T06:30:10.038387Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1215,8 +1215,8 @@
    "execution_count": 30,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:20:12.147890Z",
-     "start_time": "2019-05-22T10:20:12.137223Z"
+     "end_time": "2019-04-13T06:30:10.262632Z",
+     "start_time": "2019-04-13T06:30:10.254256Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -1258,7 +1258,7 @@
    "source": [
     "### 参考资料\n",
     "\n",
-    "* [Numpy 官方文档](https://docs.scipy.org/doc/numpy/user/index.html)"
+    "- [Numpy 用户指南](https://docs.scipy.org/doc/numpy/user/index.html)"
    ]
   }
  ],
@@ -1281,23 +1281,10 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.1"
+   "version": "3.7.3"
   },
   "nteract": {
    "version": "0.12.3"
-  },
-  "toc": {
-   "base_numbering": 1,
-   "nav_menu": {},
-   "number_sections": true,
-   "sideBar": true,
-   "skip_h1_title": false,
-   "title_cell": "Table of Contents",
-   "title_sidebar": "Contents",
-   "toc_cell": false,
-   "toc_position": {},
-   "toc_section_display": true,
-   "toc_window_display": false
   },
   "varInspector": {
    "cols": {
