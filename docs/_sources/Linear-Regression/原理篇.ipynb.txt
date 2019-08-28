@@ -211,6 +211,13 @@
     "\n",
     "所以梯度$\\frac{\\partial f}{\\partial x}*i+\\frac{\\partial f}{\\partial y}*j$为等高线上点$P$处的法向量，因此我们可得到梯度与等高线的下述**关系**：函数$z=f(x,y)$在点$P(x,y)$的梯度的方向与过点$P$的等高线$f(x,y)=c$在这点的法线的一个方向相同，且从数值较低的等高线指向数值较高的等高线，而且梯度的模等于函数在这个法线方向的方向导数，这个法线方向就是方向导数取得最大值的方向。"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
@@ -232,23 +239,10 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.3"
+   "version": "3.7.1"
   },
   "nteract": {
    "version": "0.12.3"
-  },
-  "toc": {
-   "base_numbering": 1,
-   "nav_menu": {},
-   "number_sections": true,
-   "sideBar": true,
-   "skip_h1_title": false,
-   "title_cell": "Table of Contents",
-   "title_sidebar": "Contents",
-   "toc_cell": false,
-   "toc_position": {},
-   "toc_section_display": true,
-   "toc_window_display": false
   },
   "varInspector": {
    "cols": {

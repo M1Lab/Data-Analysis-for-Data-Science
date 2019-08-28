@@ -21,8 +21,8 @@
    "execution_count": 1,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:20.941991Z",
-     "start_time": "2019-05-22T10:19:20.510538Z"
+     "end_time": "2019-05-21T09:20:02.772630Z",
+     "start_time": "2019-05-21T09:20:02.395304Z"
     }
    },
    "outputs": [
@@ -56,8 +56,8 @@
    "execution_count": 2,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:20.948001Z",
-     "start_time": "2019-05-22T10:19:20.944676Z"
+     "end_time": "2019-05-21T09:20:02.779107Z",
+     "start_time": "2019-05-21T09:20:02.775638Z"
     }
    },
    "outputs": [],
@@ -83,8 +83,8 @@
    "execution_count": 3,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:20.958576Z",
-     "start_time": "2019-05-22T10:19:20.950777Z"
+     "end_time": "2019-05-21T09:20:02.790267Z",
+     "start_time": "2019-05-21T09:20:02.782005Z"
     }
    },
    "outputs": [
@@ -122,8 +122,8 @@
    "execution_count": 4,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:20.980709Z",
-     "start_time": "2019-05-22T10:19:20.971333Z"
+     "end_time": "2019-05-21T09:20:02.802704Z",
+     "start_time": "2019-05-21T09:20:02.794097Z"
     }
    },
    "outputs": [
@@ -161,8 +161,8 @@
    "execution_count": 5,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.103808Z",
-     "start_time": "2019-05-22T10:19:21.096221Z"
+     "end_time": "2019-05-21T09:20:02.812767Z",
+     "start_time": "2019-05-21T09:20:02.805233Z"
     }
    },
    "outputs": [
@@ -202,8 +202,8 @@
    "execution_count": 6,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.235226Z",
-     "start_time": "2019-05-22T10:19:21.214798Z"
+     "end_time": "2019-05-21T09:20:02.896978Z",
+     "start_time": "2019-05-21T09:20:02.880873Z"
     }
    },
    "outputs": [
@@ -303,8 +303,8 @@
    "execution_count": 7,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.363783Z",
-     "start_time": "2019-05-22T10:19:21.344512Z"
+     "end_time": "2019-05-21T09:20:02.989387Z",
+     "start_time": "2019-05-21T09:20:02.973070Z"
     }
    },
    "outputs": [
@@ -417,8 +417,8 @@
    "execution_count": 8,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.493245Z",
-     "start_time": "2019-05-22T10:19:21.461800Z"
+     "end_time": "2019-05-21T09:20:03.078905Z",
+     "start_time": "2019-05-21T09:20:03.059496Z"
     }
    },
    "outputs": [
@@ -543,8 +543,8 @@
    "execution_count": 9,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.678750Z",
-     "start_time": "2019-05-22T10:19:21.644163Z"
+     "end_time": "2019-05-21T09:20:03.179030Z",
+     "start_time": "2019-05-21T09:20:03.156310Z"
     }
    },
    "outputs": [
@@ -690,8 +690,8 @@
    "execution_count": 10,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.809771Z",
-     "start_time": "2019-05-22T10:19:21.785396Z"
+     "end_time": "2019-05-21T09:20:03.274655Z",
+     "start_time": "2019-05-21T09:20:03.245236Z"
     }
    },
    "outputs": [
@@ -830,8 +830,8 @@
    "execution_count": 11,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.836000Z",
-     "start_time": "2019-05-22T10:19:21.815511Z"
+     "end_time": "2019-05-21T09:20:03.293117Z",
+     "start_time": "2019-05-21T09:20:03.277239Z"
     }
    },
    "outputs": [
@@ -902,8 +902,8 @@
    "execution_count": 12,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:21.978052Z",
-     "start_time": "2019-05-22T10:19:21.904349Z"
+     "end_time": "2019-05-21T09:20:03.408417Z",
+     "start_time": "2019-05-21T09:20:03.349067Z"
     }
    },
    "outputs": [
@@ -1005,8 +1005,8 @@
    "execution_count": 13,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:22.037804Z",
-     "start_time": "2019-05-22T10:19:22.008753Z"
+     "end_time": "2019-05-21T09:20:03.454965Z",
+     "start_time": "2019-05-21T09:20:03.430717Z"
     }
    },
    "outputs": [
@@ -1177,8 +1177,8 @@
    "execution_count": 14,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-05-22T10:19:22.123297Z",
-     "start_time": "2019-05-22T10:19:22.090212Z"
+     "end_time": "2019-05-21T09:20:03.551944Z",
+     "start_time": "2019-05-21T09:20:03.508830Z"
     }
    },
    "outputs": [
@@ -1222,7 +1222,7 @@
    "source": [
     "### 参考资料\n",
     "\n",
-    "* [Pandas 官方文档](http://pandas.pydata.org/pandas-docs/stable/index.html)\n",
+    "* [Pandas 用户指南](http://pandas.pydata.org/pandas-docs/stable/index.html)\n",
     "* [python 数据科学手册](https://github.com/jakevdp/PythonDataScienceHandbook)"
    ]
   }
