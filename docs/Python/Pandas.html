@@ -27,9 +27,9 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
-        <script type="text/javascript" src="../_static/google_analytics.js"></script>
         <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -38,10 +38,9 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Matplotlib" href="Matplotlib.html" />
+    <link rel="next" title="Matplotlib+Seaborn" href="Matplotlib+Seaborn.html" />
     <link rel="prev" title="Numpy" href="Numpy.html" /> 
 </head>
 
@@ -91,9 +90,27 @@
 <li class="toctree-l2"><a class="reference internal" href="Python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Jupyter notebook.html">Jupyter Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Numpy.html">Numpy</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Seaborn.html">Seaborn</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pandas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#版本">版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#别名">别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#数据结构">数据结构</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#序列(Series)">序列(Series)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#数据框(DataFrame)">数据框(DataFrame)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#数据文件的输出和输入">数据文件的输出和输入</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#文件输入">文件输入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#文件导出">文件导出</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#中文编码问题">中文编码问题</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#索引与切片">索引与切片</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#通用方法">通用方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#数据透视表">数据透视表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#参考资料">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Matplotlib+Seaborn.html">Matplotlib+Seaborn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scikit-learn.html">Scikit-learn</a></li>
 </ul>
 </li>
@@ -400,14 +417,1028 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Pandas">
 <h1>Pandas<a class="headerlink" href="#Pandas" title="永久链接至标题">¶</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<p>Pandas 是一个开源的第三方库，为 Python 提供高性能、易于使用的数据结构和数据分析工具。</p>
+<div class="section" id="版本">
+<h2>版本<a class="headerlink" href="#版本" title="永久链接至标题">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&#39;0.24.1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="别名">
+<h2>别名<a class="headerlink" href="#别名" title="永久链接至标题">¶</a></h2>
+<p>遵循惯例，使用<code class="docutils literal notranslate"><span class="pre">pd</span></code>作为别名导入 Pandas.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="数据结构">
+<h2>数据结构<a class="headerlink" href="#数据结构" title="永久链接至标题">¶</a></h2>
+<p>Pandas 中的数据结构可以看成增强版的 Numpy 数组，主要介绍序列(Series)、数据框(DataFrame)。</p>
+<div class="section" id="序列(Series)">
+<h3>序列(Series)<a class="headerlink" href="#序列(Series)" title="永久链接至标题">¶</a></h3>
+<p>Pandas 中的 Series 对象一种带索引数据构成的一维数组，通过<code class="docutils literal notranslate"><span class="pre">pd.Series()</span></code>方法创建</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 生成一个值为 [1,2,3,4,5] 的 Series 对象</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">data1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+</pre></div>
+</div>
+</div>
+<p>Series 有两个基本属性：<code class="docutils literal notranslate"><span class="pre">index</span></code>和 <code class="docutils literal notranslate"><span class="pre">values</span></code>。其中<code class="docutils literal notranslate"><span class="pre">values</span></code>储存数组的值，<code class="docutils literal notranslate"><span class="pre">index</span></code>储存索引数据，默认为<code class="docutils literal notranslate"><span class="pre">[0,1,2,...]</span></code>递增的整数序列，可通过<code class="docutils literal notranslate"><span class="pre">index=</span></code>变量指定索引。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 生产一个索引为 [‘a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;],值为 [1,2,3,4,5] 的 Series 对象</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">])</span>
+<span class="n">data2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>a    1
+b    2
+c    3
+d    4
+e    5
+dtype: int64
+</pre></div>
+</div>
+</div>
+<p>通过字典(dict)对象也能创建 Series：</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 生产一个索引为 [‘a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;],值为[ 1,2,3,4,5] 的 Series 对象</span>
+<span class="n">data3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span>
+<span class="n">data3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>a    1
+b    2
+c    3
+d    4
+e    5
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="数据框(DataFrame)">
+<h3>数据框(DataFrame)<a class="headerlink" href="#数据框(DataFrame)" title="永久链接至标题">¶</a></h3>
+<p>Pandas 中的 DataFrame 对象可以看成多个相同索引的 Series 对象组成的数据类型，同时具有行索引和列索引，类似 Excel 中的表格，通过<code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>方法创建</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 将 data2、data3合并为一个 DataFrame 对象</span>
+<span class="n">Data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;data2&quot;</span><span class="p">:</span><span class="n">data2</span><span class="p">,</span> <span class="s2">&quot;data3&quot;</span><span class="p">:</span><span class="n">data3</span><span class="p">})</span>
+<span class="n">Data</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data2</th>
+      <th>data3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="数据文件的输出和输入">
+<h2>数据文件的输出和输入<a class="headerlink" href="#数据文件的输出和输入" title="永久链接至标题">¶</a></h2>
+<p>Pandas 可以直接从xlsx、csv等文件中输入数据，也可以将数据输出到xlsx、csv等文件中。</p>
+<div class="section" id="文件输入">
+<h3>文件输入<a class="headerlink" href="#文件输入" title="永久链接至标题">¶</a></h3>
+<p>常用方法</p>
+<ul class="simple">
+<li><p>pd.read_csv()：从文件、URL、文件型对象中加载带分隔符的数据，默认分隔符为逗号。</p></li>
+<li><p>pd.read_excel()：从EXCLE的xls文件中加载数据。</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 导入 iris.csv</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/iris.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># 显示前五行</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="文件导出">
+<h3>文件导出<a class="headerlink" href="#文件导出" title="永久链接至标题">¶</a></h3>
+<p>Pandas 中的文件导出操作与文件导入操作类似，常用方法有<code class="docutils literal notranslate"><span class="pre">pd.to_csv()</span></code>、<code class="docutils literal notranslate"><span class="pre">pd.to_excel</span></code>等</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">iris</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./data/iris_1.csv&#39;</span><span class="p">)</span>
+
+<span class="n">Iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/iris_1.csv&#39;</span><span class="p">)</span>
+<span class="n">Iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="中文编码问题">
+<h3>中文编码问题<a class="headerlink" href="#中文编码问题" title="永久链接至标题">¶</a></h3>
+<p>利用 Pandas 导入、导出含中文字符的数据文件时，有可能出现中文字符无法正常识别的问题，如果按默认格式导入数据的话，容易报错<code class="docutils literal notranslate"><span class="pre">UnicodeDecodeError:</span> <span class="pre">'utf-8'</span> <span class="pre">codec</span> <span class="pre">can't</span> <span class="pre">decode</span> <span class="pre">byte</span> <span class="pre">0xb1</span> <span class="pre">in</span> <span class="pre">position</span> <span class="pre">0:</span> <span class="pre">invalid</span> <span class="pre">start</span> <span class="pre">byte</span></code>，这时候就需要使用<code class="docutils literal notranslate"><span class="pre">encoding</span></code>变量</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 按照默认格式导入 data.csv 文件</span>
+<span class="n">watermelon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/watermelon.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode byte 0xb1 in position 0: invalid start byte</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 导入 data.csv 文件</span>
+<span class="n">watermelon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/watermelon.csv&#39;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;gb2312&#39;</span><span class="p">)</span>
+<span class="n">watermelon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>编号</th>
+      <th>色泽</th>
+      <th>根蒂</th>
+      <th>敲声</th>
+      <th>纹理</th>
+      <th>脐部</th>
+      <th>触感</th>
+      <th>密度</th>
+      <th>含糖率</th>
+      <th>好瓜</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>No01</td>
+      <td>青绿</td>
+      <td>蜷缩</td>
+      <td>浊响</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.697</td>
+      <td>0.460</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>No02</td>
+      <td>乌黑</td>
+      <td>蜷缩</td>
+      <td>沉闷</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.774</td>
+      <td>0.376</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>No03</td>
+      <td>乌黑</td>
+      <td>蜷缩</td>
+      <td>浊响</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.634</td>
+      <td>0.264</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>No04</td>
+      <td>青绿</td>
+      <td>蜷缩</td>
+      <td>沉闷</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.608</td>
+      <td>0.318</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>No05</td>
+      <td>浅白</td>
+      <td>蜷缩</td>
+      <td>浊响</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.556</td>
+      <td>0.215</td>
+      <td>是</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="索引与切片">
+<h2>索引与切片<a class="headerlink" href="#索引与切片" title="永久链接至标题">¶</a></h2>
+<p>由于 Pandas 中的数据结构引入的行索引和列索引，故在 Python 和 Numpy 中利用中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>进行索引的操作在 Pandas 中已无法使用，在 Pandas 中可以通过<code class="docutils literal notranslate"><span class="pre">pd.loc[]</span></code>、<code class="docutils literal notranslate"><span class="pre">pd.iloc[]</span></code>进行索引和切分操作。</p>
+<p>区别：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.loc[]</span></code>：利用数据文件中自带的标签索引数据；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.iloc[]</span></code>： 利用数据文件中的行号与列号索引数据，与在 Python 和 Numpy 中利用中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>进行索引类似；</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 导入 data.csv 文件，利用编号列进行行索引</span>
+<span class="n">watermelon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/watermelon.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;gb2312&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;编号&#39;</span><span class="p">)</span>
+<span class="n">watermelon</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>色泽</th>
+      <th>根蒂</th>
+      <th>敲声</th>
+      <th>纹理</th>
+      <th>脐部</th>
+      <th>触感</th>
+      <th>密度</th>
+      <th>含糖率</th>
+      <th>好瓜</th>
+    </tr>
+    <tr>
+      <th>编号</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No01</th>
+      <td>青绿</td>
+      <td>蜷缩</td>
+      <td>浊响</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.697</td>
+      <td>0.460</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>No02</th>
+      <td>乌黑</td>
+      <td>蜷缩</td>
+      <td>沉闷</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.774</td>
+      <td>0.376</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>No03</th>
+      <td>乌黑</td>
+      <td>蜷缩</td>
+      <td>浊响</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.634</td>
+      <td>0.264</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>No04</th>
+      <td>青绿</td>
+      <td>蜷缩</td>
+      <td>沉闷</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.608</td>
+      <td>0.318</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <th>No05</th>
+      <td>浅白</td>
+      <td>蜷缩</td>
+      <td>浊响</td>
+      <td>清晰</td>
+      <td>凹陷</td>
+      <td>硬滑</td>
+      <td>0.556</td>
+      <td>0.215</td>
+      <td>是</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 利用 pd.loc[]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">watermelon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;No01&#39;</span><span class="p">:</span><span class="s1">&#39;No04&#39;</span><span class="p">,</span> <span class="s1">&#39;色泽&#39;</span><span class="p">:</span><span class="s1">&#39;触感&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;---------------------------------------&#39;</span><span class="p">)</span>
+
+<span class="c1"># 利用 pd.iloc[]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">watermelon</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+      色泽  根蒂  敲声  纹理  脐部  触感
+编号
+No01  青绿  蜷缩  浊响  清晰  凹陷  硬滑
+No02  乌黑  蜷缩  沉闷  清晰  凹陷  硬滑
+No03  乌黑  蜷缩  浊响  清晰  凹陷  硬滑
+No04  青绿  蜷缩  沉闷  清晰  凹陷  硬滑
+---------------------------------------
+      色泽  根蒂  敲声  纹理  脐部  触感
+编号
+No01  青绿  蜷缩  浊响  清晰  凹陷  硬滑
+No02  乌黑  蜷缩  沉闷  清晰  凹陷  硬滑
+No03  乌黑  蜷缩  浊响  清晰  凹陷  硬滑
+No04  青绿  蜷缩  沉闷  清晰  凹陷  硬滑
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="通用方法">
+<h2>通用方法<a class="headerlink" href="#通用方法" title="永久链接至标题">¶</a></h2>
+<p>Pandas 中常用的统计函数：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>统计函数</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pd.count()</p></td>
+<td><p>统计个数，空值<code class="docutils literal notranslate"><span class="pre">NaN</span></code>不计算</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.min()</p></td>
+<td><p>最小值</p></td>
+</tr>
+<tr class="row-even"><td><p>pd.max()</p></td>
+<td><p>最大值</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.sum()</p></td>
+<td><p>求和</p></td>
+</tr>
+<tr class="row-even"><td><p>pd.mean()</p></td>
+<td><p>均值</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.median()</p></td>
+<td><p>中位数</p></td>
+</tr>
+<tr class="row-even"><td><p>pd.var()</p></td>
+<td><p>方差</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.std()</p></td>
+<td><p>标准差</p></td>
+</tr>
+<tr class="row-even"><td><p>pd.idxmin()</p></td>
+<td><p>最小值的索引位置</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.idxmax()</p></td>
+<td><p>最小值的索引位置</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pandas 中的通用方法：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>通用方法</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pd.head(n=5)</p></td>
+<td><p>返回 DataFrame 的前 n 行数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.tial(n=5)</p></td>
+<td><p>返回 DataFrame 的后 n 行数据</p></td>
+</tr>
+<tr class="row-even"><td><p>pd.info()</p></td>
+<td><p>返回 DataFrame 的简明摘要</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.describe()</p></td>
+<td><p>返回 DataFrame 的描述性统计数据</p></td>
+</tr>
+<tr class="row-even"><td><p>pd.drop()</p></td>
+<td><p>删除 DataFrame 中的不必要的列或行</p></td>
+</tr>
+<tr class="row-odd"><td><p>pd.drop_duplicates(subset=None)</p></td>
+<td><p>删除 DataFrame 中重复行，可通过<code class="docutils literal notranslate"><span class="pre">subset</span></code>变量选择筛选列</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 返回 Iris 的前五行</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Iris.head() = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">Iris</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># 返回 Iris 的后五行</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Iris.tail() = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">Iris</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># 返回 Iris 的简明摘要</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Iris</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># 返回 Iris 的描述性统计数据</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Iris.describe() = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">Iris</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># 删除 Iris 中的 Unnamed 列</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Iris.drop() = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">Iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Iris.head() =
+    Unnamed: 0  sepal_length  sepal_width  petal_length  petal_width species
+0           0           5.1          3.5           1.4          0.2  setosa
+1           1           4.9          3.0           1.4          0.2  setosa
+2           2           4.7          3.2           1.3          0.2  setosa
+3           3           4.6          3.1           1.5          0.2  setosa
+4           4           5.0          3.6           1.4          0.2  setosa
+------------------------------------------------------------
+Iris.tail() =
+      Unnamed: 0  sepal_length  sepal_width  petal_length  petal_width  \
+145         145           6.7          3.0           5.2          2.3
+146         146           6.3          2.5           5.0          1.9
+147         147           6.5          3.0           5.2          2.0
+148         148           6.2          3.4           5.4          2.3
+149         149           5.9          3.0           5.1          1.8
+
+       species
+145  virginica
+146  virginica
+147  virginica
+148  virginica
+149  virginica
+------------------------------------------------------------
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 6 columns):
+Unnamed: 0      150 non-null int64
+sepal_length    150 non-null float64
+sepal_width     150 non-null float64
+petal_length    150 non-null float64
+petal_width     150 non-null float64
+species         150 non-null object
+dtypes: float64(4), int64(1), object(1)
+memory usage: 7.1+ KB
+None
+------------------------------------------------------------
+Iris.describe() =
+        Unnamed: 0  sepal_length  sepal_width  petal_length  petal_width
+count  150.000000    150.000000   150.000000    150.000000   150.000000
+mean    74.500000      5.843333     3.057333      3.758000     1.199333
+std     43.445368      0.828066     0.435866      1.765298     0.762238
+min      0.000000      4.300000     2.000000      1.000000     0.100000
+25%     37.250000      5.100000     2.800000      1.600000     0.300000
+50%     74.500000      5.800000     3.000000      4.350000     1.300000
+75%    111.750000      6.400000     3.300000      5.100000     1.800000
+max    149.000000      7.900000     4.400000      6.900000     2.500000
+------------------------------------------------------------
+Iris.drop() =
+    sepal_length  sepal_width  petal_length  petal_width species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+------------------------------------------------------------
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="数据透视表">
+<h2>数据透视表<a class="headerlink" href="#数据透视表" title="永久链接至标题">¶</a></h2>
+<p>通过数据透视表可以探究数据集内部的关联性，在 Pandas 可以通过<code class="docutils literal notranslate"><span class="pre">pd.groupby()</span></code>和<code class="docutils literal notranslate"><span class="pre">pd.pivot_table()</span></code>方法实现。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 导入 titanic</span>
+<span class="n">titanic</span> <span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/titanic.csv&#39;</span><span class="p">)</span>
+
+<span class="n">titanic</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>统计不同性别、不同船舱乘客的生还率:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 通过 pd.groupby() 方法</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;titanic.groupby =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">titanic</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="s1">&#39;Pclass&#39;</span><span class="p">])[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unstack</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># 通过 pd.pivot_table() 方法</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;titanic.pivot_table =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">titanic</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+titanic.groupby =
+ Pclass         1         2         3
+Sex
+female  0.968085  0.921053  0.500000
+male    0.368852  0.157407  0.135447
+------------------------------
+titanic.pivot_table =
+ Pclass         1         2         3
+Sex
+female  0.968085  0.921053  0.500000
+male    0.368852  0.157407  0.135447
+</pre></div></div>
+</div>
+<p>与<code class="docutils literal notranslate"><span class="pre">pd.groupby()</span></code>方法相比，<code class="docutils literal notranslate"><span class="pre">pd.pivot_table()</span></code>方法更简洁，建议使用后者。</p>
+</div>
+<div class="section" id="参考资料">
+<h2>参考资料<a class="headerlink" href="#参考资料" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html">Pandas 官方文档</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">python 数据科学手册</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -419,7 +1450,7 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Matplotlib.html" class="btn btn-neutral float-right" title="Matplotlib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Matplotlib+Seaborn.html" class="btn btn-neutral float-right" title="Matplotlib+Seaborn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Numpy.html" class="btn btn-neutral float-left" title="Numpy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

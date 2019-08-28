@@ -27,9 +27,9 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/baidu_tongji.js"></script>
-        <script type="text/javascript" src="../_static/google_analytics.js"></script>
         <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -38,7 +38,6 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gluon.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Pandas" href="Pandas.html" />
@@ -115,8 +114,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Seaborn.html">Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matplotlib+Seaborn.html">Matplotlib+Seaborn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scikit-learn.html">Scikit-learn</a></li>
 </ul>
 </li>
@@ -466,12 +464,12 @@ div.rendered_html tbody tr:hover {
 <h3>属性<a class="headerlink" href="#属性" title="永久链接至标题">¶</a></h3>
 <p>每个<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>数组都拥有如下属性：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">nidm</span></code>：数组维度</li>
-<li><code class="docutils literal notranslate"><span class="pre">shape</span></code>：维度大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">size</span></code>：数组大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">dtype</span></code>：数据类型</li>
-<li><code class="docutils literal notranslate"><span class="pre">itemsize</span></code>：元素字节大小, 以<code class="docutils literal notranslate"><span class="pre">bytes</span></code>为单位</li>
-<li><code class="docutils literal notranslate"><span class="pre">nbytes</span></code>：数组字节大小, 以<code class="docutils literal notranslate"><span class="pre">bytes</span></code>为单位</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nidm</span></code>：数组维度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>：维度大小</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>：数组大小</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code>：数据类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">itemsize</span></code>：元素字节大小, 以<code class="docutils literal notranslate"><span class="pre">bytes</span></code>为单位</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nbytes</span></code>：数组字节大小, 以<code class="docutils literal notranslate"><span class="pre">bytes</span></code>为单位</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -495,16 +493,16 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[[3 4 9]
- [0 0 6]
- [4 4 3]]
+[[7 1 9]
+ [2 2 9]
+ [0 4 9]]
 
 x.ndim: 2
 x.shape: (3, 3)
 x.size: 9
-x.dtype: int32
-x.itemsize: 4
-x.nbytes: 36
+x.dtype: int64
+x.itemsize: 8
+x.nbytes: 72
 </pre></div></div>
 </div>
 </div>
@@ -687,8 +685,8 @@ x.nbytes: 36
 </div>
 <p>序列数组：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>：创建一个从<code class="docutils literal notranslate"><span class="pre">start</span></code>到<code class="docutils literal notranslate"><span class="pre">stop</span></code>,步长为<code class="docutils literal notranslate"><span class="pre">step</span></code>的序列数组。</li>
-<li><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num=50)</span></code>：创建一个从<code class="docutils literal notranslate"><span class="pre">start</span></code>到<code class="docutils literal notranslate"><span class="pre">stop</span></code>,元素个数为<code class="docutils literal notranslate"><span class="pre">num</span></code>的序列数组。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>：创建一个从<code class="docutils literal notranslate"><span class="pre">start</span></code>到<code class="docutils literal notranslate"><span class="pre">stop</span></code>,步长为<code class="docutils literal notranslate"><span class="pre">step</span></code>的序列数组。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num=50)</span></code>：创建一个从<code class="docutils literal notranslate"><span class="pre">start</span></code>到<code class="docutils literal notranslate"><span class="pre">stop</span></code>,元素个数为<code class="docutils literal notranslate"><span class="pre">num</span></code>的序列数组。</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -732,9 +730,9 @@ x.nbytes: 36
 </div>
 <p>随机分布数组：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code>：创建一个由 0 ~ 1 均匀分布生成的随机数组成的数组</li>
-<li><code class="docutils literal notranslate"><span class="pre">np.random.normal(loc=0.0,</span> <span class="pre">scale=1.0,</span> <span class="pre">size=None)</span></code>：创建一个由均值为<code class="docutils literal notranslate"><span class="pre">loc</span></code>、方差为<code class="docutils literal notranslate"><span class="pre">scale</span></code>的正态分布生成的随机数组成的数组</li>
-<li><code class="docutils literal notranslate"><span class="pre">np.random.randint(low,</span> <span class="pre">high=None,</span> <span class="pre">size=None)</span></code>：创建一个由<code class="docutils literal notranslate"><span class="pre">low</span></code>~<code class="docutils literal notranslate"><span class="pre">high</span></code>均匀分布生成的随机整数组成的数值</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code>：创建一个由 0 ~ 1 均匀分布生成的随机数组成的数组</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.normal(loc=0.0,</span> <span class="pre">scale=1.0,</span> <span class="pre">size=None)</span></code>：创建一个由均值为<code class="docutils literal notranslate"><span class="pre">loc</span></code>、方差为<code class="docutils literal notranslate"><span class="pre">scale</span></code>的正态分布生成的随机数组成的数组</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.randint(low,</span> <span class="pre">high=None,</span> <span class="pre">size=None)</span></code>：创建一个由<code class="docutils literal notranslate"><span class="pre">low</span></code>~<code class="docutils literal notranslate"><span class="pre">high</span></code>均匀分布生成的随机整数组成的数值</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -752,9 +750,9 @@ x.nbytes: 36
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[0.36002842, 0.08519123, 0.4640263 ],
-       [0.54155948, 0.43645734, 0.44322506],
-       [0.30741928, 0.2057965 , 0.21929336]])
+<span></span>array([[0.48575322, 0.72737388, 0.32180274],
+       [0.68450497, 0.37856702, 0.7614299 ],
+       [0.83093308, 0.66726084, 0.79841631]])
 </pre></div>
 </div>
 </div>
@@ -774,9 +772,9 @@ x.nbytes: 36
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[-0.35800332, -0.36553495, -0.62851015],
-       [-2.01214244,  0.42221338,  0.25461076],
-       [ 0.64228871,  0.28348644,  0.69593449]])
+<span></span>array([[-0.04566183,  0.72873581, -1.10870786],
+       [ 0.32082532,  1.78345795,  0.15090186],
+       [-0.48690445, -0.11890733,  1.85462935]])
 </pre></div>
 </div>
 </div>
@@ -796,9 +794,9 @@ x.nbytes: 36
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[3, 6, 0],
-       [3, 2, 3],
-       [0, 9, 2]])
+<span></span>array([[5, 2, 2],
+       [7, 4, 3],
+       [6, 0, 5]])
 </pre></div>
 </div>
 </div>
@@ -842,50 +840,50 @@ x % 2 =  [0 1 0 1]
 </pre></div></div>
 </div>
 <p>运算符与通用函数的对应关系如下表所示：</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="38%" />
-<col width="46%" />
+<col style="width: 15%" />
+<col style="width: 38%" />
+<col style="width: 46%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">运算符</th>
-<th class="head">对应的通用函数</th>
-<th class="head">描述</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>运算符</p></th>
+<th class="head"><p>对应的通用函数</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">+</span></code></td>
-<td>np.add</td>
-<td>加法运算</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>np.add</p></td>
+<td><p>加法运算</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">-</span></code></td>
-<td>np.subtract</td>
-<td>减法运算</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>np.subtract</p></td>
+<td><p>减法运算</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">-</span></code></td>
-<td>np.negative</td>
-<td>负数运算</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>np.negative</p></td>
+<td><p>负数运算</p></td>
 </tr>
-<tr class="row-odd"><td>*</td>
-<td>np.multipy</td>
-<td>乘法运算</td>
+<tr class="row-odd"><td><p>*</p></td>
+<td><p>np.multipy</p></td>
+<td><p>乘法运算</p></td>
 </tr>
-<tr class="row-even"><td>/</td>
-<td>np.divide</td>
-<td>除法运算</td>
+<tr class="row-even"><td><p>/</p></td>
+<td><p>np.divide</p></td>
+<td><p>除法运算</p></td>
 </tr>
-<tr class="row-odd"><td>//</td>
-<td>np.floor_divide</td>
-<td>取商除法运算</td>
+<tr class="row-odd"><td><p>//</p></td>
+<td><p>np.floor_divide</p></td>
+<td><p>取商除法运算</p></td>
 </tr>
-<tr class="row-even"><td>**</td>
-<td>np.power</td>
-<td>指数运算</td>
+<tr class="row-even"><td><p>**</p></td>
+<td><p>np.power</p></td>
+<td><p>指数运算</p></td>
 </tr>
-<tr class="row-odd"><td>&amp;</td>
-<td>np.mod</td>
-<td>取模(余数)除法运算</td>
+<tr class="row-odd"><td><p>&amp;</p></td>
+<td><p>np.mod</p></td>
+<td><p>取模(余数)除法运算</p></td>
 </tr>
 </tbody>
 </table>
@@ -953,21 +951,21 @@ A.dot(B) =
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[[5 0 5]
- [1 9 6]
- [1 5 1]]
+[[8 0 4]
+ [0 5 0]
+ [4 1 9]]
 
-x[1,1] = 9
+x[1,1] = 5
 x[1:,1:] =
- [[9 6]
- [5 1]]
+ [[5 0]
+ [1 9]]
 </pre></div></div>
 </div>
 </div>
 <div class="section" id="排序">
 <h3>排序<a class="headerlink" href="#排序" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li>np.sort(a, axis=1)：<code class="docutils literal notranslate"><span class="pre">a</span></code>表示要排序的数值，<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>表示按列排序(<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>表示按行排序)</li>
+<li><p>np.sort(a, axis=1)：<code class="docutils literal notranslate"><span class="pre">a</span></code>表示要排序的数值，<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>表示按列排序(<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>表示按行排序)</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -992,29 +990,29 @@ x[1:,1:] =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 x =
- [[7 9 6 2 1 2]
- [9 3 4 5 8 7]
- [4 6 8 1 6 7]
- [5 7 8 6 1 2]]
+ [[1 8 8 9 4 5]
+ [7 0 4 7 3 5]
+ [1 5 3 2 0 3]
+ [8 4 3 2 2 3]]
 
 np.sort(x, axis=0) =
- [[4 3 4 1 1 2]
- [5 6 6 2 1 2]
- [7 7 8 5 6 7]
- [9 9 8 6 8 7]]
+ [[1 0 3 2 0 3]
+ [1 4 3 2 2 3]
+ [7 5 4 7 3 5]
+ [8 8 8 9 4 5]]
 
 np.sort(x, axis=1) =
- [[1 2 2 6 7 9]
- [3 4 5 7 8 9]
- [1 4 6 6 7 8]
- [1 2 5 6 7 8]]
+ [[1 4 5 8 8 9]
+ [0 3 4 5 7 7]
+ [0 1 2 3 3 5]
+ [2 2 3 3 4 8]]
 </pre></div></div>
 </div>
 </div>
 <div class="section" id="变形">
 <h3>变形<a class="headerlink" href="#变形" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>方法</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>方法</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
@@ -1035,22 +1033,22 @@ np.sort(x, axis=1) =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 x =
- [[9 3 5]
- [8 7 7]
- [2 7 2]]
+ [[3 9 2]
+ [8 2 0]
+ [8 4 9]]
 
 通过变形获得的行向量:
- [[9 3 5 8 7 7 2 7 2]]
+ [[3 9 2 8 2 0 8 4 9]]
 通过变形获得的列向量:
- [[9]
- [3]
- [5]
- [8]
- [7]
- [7]
+ [[3]
+ [9]
  [2]
- [7]
- [2]]
+ [8]
+ [2]
+ [0]
+ [8]
+ [4]
+ [9]]
 </pre></div></div>
 </div>
 </div>
@@ -1073,22 +1071,22 @@ x =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 x =
- [[0 4 0]
- [5 8 6]]
+ [[3 2 3]
+ [8 4 9]]
 
 x.T =
- [[0 5]
- [4 8]
- [0 6]]
+ [[3 8]
+ [2 4]
+ [3 9]]
 </pre></div></div>
 </div>
 </div>
 <div class="section" id="拼接">
 <h3>拼接<a class="headerlink" href="#拼接" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">np.concatenate((a1,</span> <span class="pre">a2,</span> <span class="pre">...),</span> <span class="pre">axis=0)</span></code>：按垂直(水平<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>)拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">np.vstack((a1,</span> <span class="pre">a2,</span> <span class="pre">...))</span></code>：按垂直方向拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">np.hstack((a1,</span> <span class="pre">a2,</span> <span class="pre">...))</span></code>：按水平方向拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.concatenate((a1,</span> <span class="pre">a2,</span> <span class="pre">...),</span> <span class="pre">axis=0)</span></code>：按垂直(水平<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>)拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.vstack((a1,</span> <span class="pre">a2,</span> <span class="pre">...))</span></code>：按垂直方向拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.hstack((a1,</span> <span class="pre">a2,</span> <span class="pre">...))</span></code>：按水平方向拼接数组元组<code class="docutils literal notranslate"><span class="pre">(a1,</span> <span class="pre">a2,</span> <span class="pre">...)</span></code>或数值列表<code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></code></p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
@@ -1167,9 +1165,9 @@ x.T =
 <div class="section" id="拆分">
 <h3>拆分<a class="headerlink" href="#拆分" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">np.split(ary,</span> <span class="pre">indices_or_sections,</span> <span class="pre">axis=0)</span></code>：<code class="docutils literal notranslate"><span class="pre">ary</span></code>为要拆分的数值，<code class="docutils literal notranslate"><span class="pre">indices_or_sections</span></code>为拆分节点序列，<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>表示按竖直方向拆分(<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>表示按竖直方向拆分)</li>
-<li><code class="docutils literal notranslate"><span class="pre">np.hsplit()</span></code>：按水平方向拆分</li>
-<li><code class="docutils literal notranslate"><span class="pre">np.vsplit()</span></code>：按竖直方向拆分</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.split(ary,</span> <span class="pre">indices_or_sections,</span> <span class="pre">axis=0)</span></code>：<code class="docutils literal notranslate"><span class="pre">ary</span></code>为要拆分的数值，<code class="docutils literal notranslate"><span class="pre">indices_or_sections</span></code>为拆分节点序列，<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>表示按竖直方向拆分(<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>表示按竖直方向拆分)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.hsplit()</span></code>：按水平方向拆分</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.vsplit()</span></code>：按竖直方向拆分</p></li>
 </ul>
 <p>一维数组：</p>
 <div class="nbinput docutils container">
@@ -1213,9 +1211,9 @@ x.T =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 通过np.split()方法拆分:
- [array([[3, 4, 1]]), array([[9, 7, 0]]), array([[0, 0, 8]])]
+ [array([[9, 3, 7]]), array([[1, 9, 0]]), array([[8, 8, 9]])]
 通过np.hsplit()方法拆分:
- [array([[3, 4, 1]]), array([[9, 7, 0]]), array([[0, 0, 8]])]
+ [array([[9, 3, 7]]), array([[1, 9, 0]]), array([[8, 8, 9]])]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1235,21 +1233,21 @@ x.T =
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 通过np.split()方法拆分:
- [array([[3],
+ [array([[9],
+       [1],
+       [8]]), array([[3],
        [9],
-       [0]]), array([[4],
-       [7],
-       [0]]), array([[1],
+       [8]]), array([[7],
        [0],
-       [8]])]
+       [9]])]
 通过np.hsplit()方法拆分:
- [array([[3],
+ [array([[9],
+       [1],
+       [8]]), array([[3],
        [9],
-       [0]]), array([[4],
-       [7],
-       [0]]), array([[1],
+       [8]]), array([[7],
        [0],
-       [8]])]
+       [9]])]
 </pre></div></div>
 </div>
 </div>
@@ -1317,17 +1315,8 @@ np.add(x) = [0 2 4]
 <div class="section" id="参考资料">
 <h2>参考资料<a class="headerlink" href="#参考资料" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/index.html">Numpy 用户指南</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/index.html">Numpy 官方文档</a></p></li>
 </ul>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 

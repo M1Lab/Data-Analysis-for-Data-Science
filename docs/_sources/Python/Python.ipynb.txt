@@ -28,15 +28,15 @@
    "execution_count": 1,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.462403Z",
-     "start_time": "2019-01-24T08:40:13.446447Z"
+     "end_time": "2019-05-22T10:22:00.872535Z",
+     "start_time": "2019-05-22T10:22:00.854240Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "'3.6.8 |Anaconda, Inc.| (default, Dec 30 2018, 18:50:55) [MSC v.1915 64 bit (AMD64)]'"
+       "'3.7.1 | packaged by conda-forge | (default, Feb 26 2019, 04:48:14) \\n[GCC 7.3.0]'"
       ]
      },
      "execution_count": 1,
@@ -61,18 +61,18 @@
    "execution_count": 2,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.682815Z",
-     "start_time": "2019-01-24T08:40:13.466394Z"
+     "end_time": "2019-05-22T10:22:01.111172Z",
+     "start_time": "2019-05-22T10:22:00.997877Z"
     },
     "inputHidden": false,
     "outputHidden": false
    },
    "outputs": [
     {
-     "name": "stderr",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Python 3.6.8 :: Anaconda, Inc.\n"
+      "Python 3.7.1\r\n"
      ]
     }
    ],
@@ -99,20 +99,17 @@
    "execution_count": 3,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.692788Z",
-     "start_time": "2019-01-24T08:40:13.685807Z"
+     "end_time": "2019-05-22T10:22:01.136859Z",
+     "start_time": "2019-05-22T10:22:01.131222Z"
     }
    },
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "'\\n这是一个多行注释\\n这是一个多行注释\\n'"
-      ]
-     },
-     "execution_count": 3,
-     "metadata": {},
-     "output_type": "execute_result"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "注释\n"
+     ]
     }
    ],
    "source": [
@@ -140,8 +137,8 @@
    "execution_count": 4,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.708746Z",
-     "start_time": "2019-01-24T08:40:13.696778Z"
+     "end_time": "2019-05-22T10:22:01.292298Z",
+     "start_time": "2019-05-22T10:22:01.287576Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -267,8 +264,8 @@
    "execution_count": 5,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.722708Z",
-     "start_time": "2019-01-24T08:40:13.712736Z"
+     "end_time": "2019-05-22T10:22:01.786777Z",
+     "start_time": "2019-05-22T10:22:01.775885Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -306,8 +303,8 @@
    "execution_count": 6,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.744649Z",
-     "start_time": "2019-01-24T08:40:13.724702Z"
+     "end_time": "2019-05-22T10:22:01.943749Z",
+     "start_time": "2019-05-22T10:22:01.937617Z"
     }
    },
    "outputs": [
@@ -339,8 +336,8 @@
    "execution_count": 7,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.763599Z",
-     "start_time": "2019-01-24T08:40:13.747641Z"
+     "end_time": "2019-05-22T10:22:02.069322Z",
+     "start_time": "2019-05-22T10:22:02.064670Z"
     }
    },
    "outputs": [
@@ -373,8 +370,8 @@
    "execution_count": 8,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.778558Z",
-     "start_time": "2019-01-24T08:40:13.768585Z"
+     "end_time": "2019-05-22T10:22:02.187462Z",
+     "start_time": "2019-05-22T10:22:02.184035Z"
     }
    },
    "outputs": [],
@@ -397,8 +394,8 @@
    "execution_count": 9,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.795512Z",
-     "start_time": "2019-01-24T08:40:13.782547Z"
+     "end_time": "2019-05-22T10:22:02.340795Z",
+     "start_time": "2019-05-22T10:22:02.335019Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -448,8 +445,8 @@
    "execution_count": 10,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.815460Z",
-     "start_time": "2019-01-24T08:40:13.800501Z"
+     "end_time": "2019-05-22T10:22:02.466018Z",
+     "start_time": "2019-05-22T10:22:02.453408Z"
     }
    },
    "outputs": [
@@ -503,8 +500,8 @@
    "execution_count": 11,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.839394Z",
-     "start_time": "2019-01-24T08:40:13.819449Z"
+     "end_time": "2019-05-22T10:22:02.687855Z",
+     "start_time": "2019-05-22T10:22:02.679062Z"
     }
    },
    "outputs": [
@@ -536,8 +533,8 @@
    "execution_count": 12,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.854357Z",
-     "start_time": "2019-01-24T08:40:13.842388Z"
+     "end_time": "2019-05-22T10:22:02.799846Z",
+     "start_time": "2019-05-22T10:22:02.796576Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -595,8 +592,8 @@
    "execution_count": 13,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.871310Z",
-     "start_time": "2019-01-24T08:40:13.859342Z"
+     "end_time": "2019-05-22T10:22:03.029591Z",
+     "start_time": "2019-05-22T10:22:03.025211Z"
     }
    },
    "outputs": [
@@ -648,8 +645,8 @@
    "execution_count": 14,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.893254Z",
-     "start_time": "2019-01-24T08:40:13.881285Z"
+     "end_time": "2019-05-22T10:22:03.246949Z",
+     "start_time": "2019-05-22T10:22:03.242108Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -694,8 +691,8 @@
    "execution_count": 15,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.909208Z",
-     "start_time": "2019-01-24T08:40:13.897243Z"
+     "end_time": "2019-05-22T10:22:03.519334Z",
+     "start_time": "2019-05-22T10:22:03.514709Z"
     }
    },
    "outputs": [
@@ -748,8 +745,8 @@
    "execution_count": 16,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.926165Z",
-     "start_time": "2019-01-24T08:40:13.912201Z"
+     "end_time": "2019-05-22T10:22:03.736167Z",
+     "start_time": "2019-05-22T10:22:03.725892Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -800,8 +797,8 @@
    "execution_count": 17,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-01-24T08:40:13.943120Z",
-     "start_time": "2019-01-24T08:40:13.929155Z"
+     "end_time": "2019-05-22T10:22:03.958041Z",
+     "start_time": "2019-05-22T10:22:03.948433Z"
     },
     "inputHidden": false,
     "outputHidden": false
@@ -838,9 +835,8 @@
    "source": [
     "### 参考资料\n",
     "\n",
-    "[北京理工大学：Python语言程序设计](https://www.icourse163.org/course/BIT-268001?tid=1003243006)\n",
-    "\n",
-    "[菜鸟教程：Python3教程](http://www.runoob.com/python3/python3-tutorial.html)"
+    "* [Python 官方中文文档](https://docs.python.org/zh-cn/3/)\n",
+    "* [北京理工大学：Python语言程序设计](https://www.icourse163.org/course/BIT-268001?tid=1003243006)"
    ]
   }
  ],
@@ -867,6 +863,19 @@
   },
   "nteract": {
    "version": "0.12.3"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": true
   },
   "varInspector": {
    "cols": {
